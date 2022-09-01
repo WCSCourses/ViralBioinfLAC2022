@@ -1,29 +1,34 @@
-# Viral Genomics and Bioinformatics Asia 2022
+# Viral Genomics and Bioinformatics Latin America and the Caribbean LAC 2022
 Base for the Viral Genomics and Bioinformatics Repository
 
 ## Course overview
-We are pleased to announce the next Viral Genomics and Bioinformatics in collaboration with COVID-19 Genomics (COG) Train (COG-Train).
+We are pleased to announce the next Viral Genomics and Bioinformatics course in collaboration with COVID-19 Genomics (COG) Train (COG-Train).
 
-Viruses are a huge public health burden all around the world. In Asia, viral infections such as influenza, dengue fever, hand, foot and mouth disease, chikungunya, and viral hepatitis kill hundreds of thousands of people each year.  Apart from health issues, emerging viral illnesses and epidemics have a global economic impact. According to the World Bank, the SARS-Cov-2 pandemic caused a more than $10 trillion deficit in the global economy in 2020-2021 alone. This demonstrates the impact of viral illnesses not only on human and animal health, but also on social and economic growth of the world.
+Viruses are a huge public health burden all around the world.  Latin America is bearing the burden of the SARS-CoV-2 virus in addition to endemic viruses such as zika, chikungunya and dengue. Apart from health issues, emerging viral illnesses and epidemics have a global economic impact. According to the World Bank, the SARS-Cov-2 pandemic caused a more than $10 trillion deficit in the global economy in 2020-2021 alone. This demonstrates the impact of viral illnesses not only on human and animal health, but also on social and economic growth of the world.
 
 Technological advances in science and research are making it possible to rapid detection, surveillance and management of viral diseases. In recent years, next generation sequencing (NGS) technologies have played an important role in the identification and classification of viruses, in the detection of drug resistance mutations and in the treatment and surveillance of viral diseases. Early identification of a virus and quick analysis of its genome will aid towards better treatment and help in controlling the disease spread. Along with the advances in the sequencing technologies, it is necessary to develop data management methods, computational analysis tools and human expertise to cope with the sequence deluge. The number of researchers able to interpret viral high throughput sequence data is currently limited.   
 
-The Viral Genomics and Bioinformatics course will teach participants how to analyse  viral genome sequences and interpret genomic data obtained by high-throughput sequencing. The use of the command line to analyse viral NGS data, quality control of sequences, reference mapping and de novo assembly of viral genomes, pathogen identification from metagenomics data, and creating phylogenetic trees will be covered in the course. 
+The Viral Genomics and Bioinformatics course will teach participants how to analyse  viral genome sequences and interpret genomic data obtained by high-throughput sequencing. The use of the command line to analyse viral NGS data, quality control of sequences, reference mapping and de novo assembly of viral genomes, pathogen identification from metagenomics data, and creating phylogenetic trees will be covered in the course. Participants, along with gaining bioinformatics knowledge, will have an opportunity to establish links and networks and develop future collaborative projects.
 
-[Course website](https://coursesandconferences.wellcomeconnectingscience.org/event/viral-genomics-and-bioinformatics-asia-20220822/)
+[Course website](https://coursesandconferences.wellcomeconnectingscience.org/event/viral-genomics-and-bioinformatics-latin-america-and-the-caribbean-20221010/)
 
 ## Instructors
+- [Carolina Torres](https://www.researchgate.net/profile/Carolina-Torres-7), Universidad de Buenos Aires - CONICET, Buenos Aires, Argentina     
+- [Josefina Campos](https://www.researchgate.net/profile/Josefina-Campos-2), ANLIS Malbrán, Argentina
 - [Sreenu Vattipally](https://www.gla.ac.uk/researchinstitutes/iii/staff/sreenuvattipally/), MRC-University of Glasgow Centre for Virus Research, UK
-- [Urmila Kulkarni Kale](https://www.researchgate.net/profile/Urmila_Kulkarni-Kale/), Savitribai Phule Pune University
-- [Le Van Tan](), Oxford University Clinical Research Unit (OUCRU)
-- [Srikeerthana Kuchi](), MRC-University of Glasgow Centre for Virus Research, UK
+- [Marta Giovanetti](), Oswaldo Cruz Foundation, Brazil
+- [Pablo Ramos](https://cidacs.bahia.fiocruz.br/en/), FIOCRUZ - Oswaldo Cruz Foundation, Brazil
 - [Richard Orton](https://www.gla.ac.uk/researchinstitutes/iii/staff/richardorton/), MRC-University of Glasgow Centre for Virus Research, UK
-- [To Nguyen](), Oxford University Clinical Research Unit (OUCRU)
-- [October Sessions](https://sph.nus.edu.sg/faculty-directory/sessions-october-michael/), National University of Singapore
-- [Sunitha Manjari Kasibhatla](), Savitribai Phule Pune University
-- [Dhiraj Dhotre](), National Center for Cell Sciences, Pune 
-- [David Studholme](https://biosciences.exeter.ac.uk/staff/profile/index.php?web_id=david_studholme), University of Exeter
-- [Kwanrutai Mairang](), Faculty of Medicine Siriraj Hospital, Mahidol University
+- [Srikeerthana Kuchi](), MRC-University of Glasgow Centre for Virus Research, UK
+- [Maria Dolores Blanco Fernandez](Link), Faculty of Pharmacy and Biochemistry, University of Buenos Aires, Argentina
+- [András Carlos Alberto Culasso ](Link), CONICET - Faculty of Pharmacy and Biochemistry, University of Buenos Aires, Argentina     
+- [Laise de Moraes](https://www.researchgate.net/profile/Laise-De-Moraes), FIOCRUZ-BA, Brazil
+
+
+- [Name](Link), affiliation
+
+
+
 
 
 
@@ -32,7 +37,7 @@ The Viral Genomics and Bioinformatics course will teach participants how to anal
 
 
 ### Detailed timetable
-[View Timetable here](https://docs.google.com/document/d/1cWLFSGWpWVE9NmPKHcIAOIH_2WHfgVog/edit?usp=sharing&ouid=101020480766226270980&rtpof=true&sd=true)
+[View Timetable here (ASIA -Iteration)](https://docs.google.com/document/d/1cWLFSGWpWVE9NmPKHcIAOIH_2WHfgVog/edit?usp=sharing&ouid=101020480766226270980&rtpof=true&sd=true)
 
 ### Advanced Learning and Training Handout
 [View ALT Handout here](Modules/Advanced%20Courses%20ALT%20Sessions%20handouts%20edited.pdf)
@@ -42,8 +47,6 @@ The Viral Genomics and Bioinformatics course will teach participants how to anal
 [PDF Manual - Introduction to Linux + Text processing](Modules/Intro_to_linux_text_processing.pdf)     
 [PDF Lectures - Introduction to Linux + Text processing](Modules/Lectures_and_Answers/Intro_to_linux_Asia2022.pdf)  
 [PDF Solutions - Introduction to Linux + Text processing](Modules/Lectures_and_Answers/Linux_solutions_to_exercises_and_quiz.pdf) 
-
-
 
 **Module 3 - Introduction to NGS sequencing**  
 [Online Manual - Introduction to NGS](Modules/Introduction_to_NGS.md)
