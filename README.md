@@ -25,8 +25,6 @@ The Viral Genomics and Bioinformatics course will teach participants how to anal
 - [Laise de Moraes](https://www.researchgate.net/profile/Laise-De-Moraes), FIOCRUZ-BA, Brazil
 
 
-- [Name](Link), affiliation
-
 
 
 
