@@ -23,8 +23,8 @@ The Viral Genomics and Bioinformatics course will teach participants how to anal
 - [Maria Dolores Blanco Fernandez](Link), Faculty of Pharmacy and Biochemistry, University of Buenos Aires, Argentina
 - [András Carlos Alberto Culasso ](Link), CONICET - Faculty of Pharmacy and Biochemistry, University of Buenos Aires, Argentina     
 - [Laise de Moraes](https://www.researchgate.net/profile/Laise-De-Moraes), FIOCRUZ-BA, Brazil
-- [Tomás Poklépovich] (https://www.researchgate.net/profile/Tomas-Poklepovich), Centro Nacional de Genómica y Bioinfomática, ANLIS Malbrán, Argentina
-- [María Sol Haim] (Link), Centro Nacional de Genómica y Bioinfomática, ANLIS Malbrán, Argentina
+- [Tomás Poklépovich](https://www.researchgate.net/profile/Tomas-Poklepovich), Centro Nacional de Genómica y Bioinfomática, ANLIS Malbrán, Argentina
+- [María Sol Haim](Link), Centro Nacional de Genómica y Bioinfomática, ANLIS Malbrán, Argentina
 
 
 
