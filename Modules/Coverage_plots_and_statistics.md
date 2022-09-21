@@ -35,9 +35,9 @@ The specific viral sequence datasets that we will examine are:
 
 These datasets are already downloaded and provided to you in the virtual machine. Now, navigate to the appropriate directory with this command:
 
-    cd /home/manager/ViralBioinfAsia2022/course_data/Coverage_Plots_Stats
+    cd /home/manager/course_data/Coverage_Plots_Stats
 
-Now, when you list the contents of the current directory with `ls -lh`, you should see something like this:
+Now, when you list the contents of the current directory with ``ls -lh``, you should see something like this:
 
     total 16M
     -rw-rw-r-- 1 manager manager 2.9K Jul 25 16:20 ARTIC_amplicons.bed
@@ -48,7 +48,7 @@ Now, when you list the contents of the current directory with `ls -lh`, you shou
     drwxrwxr-x 2 manager manager 4.0K Jul 25 16:20 images
     -rw-rw-r-- 1 manager manager 1.2K Jul 25 16:20 readME.md
 
-So, you can see we have the two BAM files, along with their accompanying index files. These BAM files consist of genomic sequence reads aligned against Alignments of sequence reads against the [Wuhan-Hu-1 reference genome](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512.2) sequence.
+So, you can see we have the two BAM files, along with their accompanying index files. These BAM files consist of genomic sequence reads aligned against the [Wuhan-Hu-1 reference genome](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512.2) sequence.
 
 ## SAMtools flagstat
 
@@ -59,9 +59,9 @@ Let's gather some information about these alignments. First, let's use the rathe
 
 Examine the output from these two commands. Can you figure out:
 
- - How many sequence reads are in ERR8261957?
- - How many sequence reads are in ERR8261968?
- - Which of the two datasets contains paired reads?
+ **- How many sequence reads are in ERR8261957?**
+ **- How many sequence reads are in ERR8261968?**
+ **- Which of the two datasets contains paired reads?**
 
 ## Qualimap (on the command line)
 
@@ -70,8 +70,8 @@ Now, let's use Qualimap to gather some information about these same two alignmen
     qualimap bamqc -bam ERR8261957.bam
     qualimap bamqc -bam ERR8261968.bam
 
-Now, if you list the directory contents with `ls -lh`, you will notice new directories called `ERR8261957_stats` and `ERR8261968_stats`. In each of these directories, you will find an HTML file that contains a detailed report on the BAM alignment. 
-Execute the command `ls -lh *_stats` to see the contents of these directories. Now, let's open the HTML files in the Firefox web browser:
+Now, if you list the directory contents with ``ls -lh``, you will notice new directories called `ERR8261957_stats` and `ERR8261968_stats`. In each of these directories, you will find an HTML file that contains a detailed report on the BAM alignment. 
+Execute the command ``ls -lh *_stats`` to see the contents of these directories. Now, let's open the HTML files in the Firefox web browser:
 
     firefox *_stats/*.html
 
@@ -82,17 +82,18 @@ You should now see something like this:
 Note that the web browser contains two tabs; one contains the report for ERR8261957.bam and the other contains report for ERR8261968.bam.
 
 Take a look at the reports to see the range of information provided. Then close the Firefox web browser.
- 
+
 
 ## Qualimap (graphical interface)
 
 As an alternative to the command-line, we can launch a graphical interface for Qualimap. 
    
-Start the Qualimap graphical interface by executing the command `qualimap &` in the Terminal. Don't worry about the warning message concerning missing R packages; just click the *Ok* button.  You should now see something like this:
+Start the Qualimap graphical interface by executing the command ``qualimap &`` in the Terminal. Don't worry about the warning message concerning missing R packages; just click the *Ok* button.  You should now see something like this:
 
 ![enter image description here](https://github.com/WCSCourses/ViralBioinfAsia2022/raw/main/course_data/Coverage_Plots_Stats/images/Screenshot%202022-07-30%20at%2011.07.42.png)
 
-Notice the File menu item at the top left corner of the Qualimap window. Select *File* -> *New analysis* -> *BAM QC* and then select one of the BAM files. When the analysis is complete you will see the results in the Qualimap window and you can click on the various sections of the results report in the menu on the left:
+Notice the File menu item at the top left corner of the Qualimap window. Select *File* -> *New analysis* -> *BAM QC* and then select one of the BAM files by clicking the "..." button. Start analysis by clicking ">>>Start analysis". 
+When the analysis is complete you will see the results in the Qualimap window and you can click on the various sections of the results report in the menu on the left:
 
 ![enter image description here](https://github.com/WCSCourses/ViralBioinfAsia2022/raw/main/course_data/Coverage_Plots_Stats/images/Screenshot%202022-07-30%20at%2011.12.25.png)
 
@@ -102,13 +103,13 @@ You can find some good information about interpreting the Qualimap results here:
 
 For our datasets, try to answer these questions:
 
- - What is the depth of coverage?
- - Is sequencing coverage uniform across the whole genome?
- - How long are the sequence reads?
- - For paired-read data, what is the insert size (i.e. the length of the sequenced fragments)?
+ **- What is the depth of coverage?**
+ **- Is sequencing coverage uniform across the whole genome?**
+ **- How long are the sequence reads?**
+ **- For paired-read data, what is the insert size (i.e. the length of the sequenced fragments)?**
 
 ### Visualising the data using IGV
-If you have any spare time then optionally, let's visually inspect the alignment data using the Integrative Genome Viewer (IGV). This will provide us with an overview of the data. (Alternatively, you can use Tablet instead of IGV, if you pr).
+If you have any spare time then optionally, let's visually inspect the alignment data using the Integrative Genome Viewer (IGV). This will provide us with an overview of the data. (Alternatively, you can use Tablet instead of IGV, if you prefer).
 
 To do this, we need the BAM files, obviously; we also need files containing the reference genome sequence. Lets download those now. First, make sure that we are in the correct directory:
 
@@ -119,7 +120,7 @@ Then use *wget* to download the reference-genome files:
     wget https://github.com/WCSCourses/ViralBioinfAsia2022/blob/main/course_data/Coverage_Plots_Stats/reference_genome.fasta https://github.com/WCSCourses/ViralBioinfAsia2022/blob/main/course_data/Coverage_Plots_Stats/reference_genome.fasta.fai https://github.com/WCSCourses/ViralBioinfAsia2022/raw/main/course_data/Coverage_Plots_Stats/reference_genome.gff3
     
 
-Now, when you execute `ls -lh` , you will notice we now have the following files: `reference_genome.fasta`,  `reference_genome.fasta.fai` and `reference_genome.gff3`. We are ready to run the IGV genome browser software by executing the command `igv`.
+Now, when you execute `ls -lh` , you will notice we now have the following files: `reference_genome.fasta`,  `reference_genome.fasta.fai` and `reference_genome.gff3`. We are ready to run the IGV genome browser software by executing the command ``igv``.
 
 Click on *Genomes* -> *Load genome from file* and select `reference_genome.fasta`.
 Click on *File* -> *Load from file* and select `reference_genome.gff3`.
@@ -130,5 +131,5 @@ You can now explore the two alignments in the IGV browser, which should look som
 ![Alignments of sequence reads against the Wuhan-Hu-1 reference genome, visualised using IGV.](https://github.com/WCSCourses/ViralBioinfAsia2022/raw/main/course_data/Coverage_Plots_Stats/images/Screenshot%202022-07-04%20at%2016.25.00.png)
 Alignments of sequence reads against the Wuhan-Hu-1 reference genome, visualised using IGV.
 
-What do you notice about the patterns of coverage of the reference genome? Are there any differences between the Illumina sequencing data versus the Oxford Nanopore sequencing data?
+**What do you notice about the patterns of coverage of the reference genome? Are there any differences between the Illumina sequencing data versus the Oxford Nanopore sequencing data?**
 
