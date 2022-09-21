@@ -136,7 +136,7 @@ You can now explore the two alignments in the IGV browser, which should look som
 ![Alignments of sequence reads against the Wuhan-Hu-1 reference genome, visualised using IGV.](https://github.com/WCSCourses/ViralBioinfAsia2022/raw/main/course_data/Coverage_Plots_Stats/images/Screenshot%202022-07-04%20at%2016.25.00.png)
 Alignments of sequence reads against the Wuhan-Hu-1 reference genome, visualised using IGV.
 
-**What do you notice about the patterns of coverage of the reference genome? 
+**What do you notice about the patterns of coverage of the reference genome?** 
 
 **Are there any differences between the Illumina sequencing data versus the Oxford Nanopore sequencing data?**
 
