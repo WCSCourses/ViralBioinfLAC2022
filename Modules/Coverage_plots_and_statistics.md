@@ -25,7 +25,7 @@ During this workshop activity, we will try both modes of running the software.
 We will use SAMtools only on the command line; there is not graphical interface for this software package.
 
 ## Input data
-Qualimap examines coverage of the reference genome sequence by aligned sequence reads. Therefore, it requires that the reads have already been aligned against the reference genome sequence and that the alignment is presented in BAM format.
+Qualimap examines coverage of the reference genome sequence by aligned sequence reads. Therefore, it requires that the reads have already been aligned against the reference genome sequence and that the alignment is presented in **BAM format**.
 
 We already discussed BAM format in the session "NGS file formats and data and QC".  You can find a formal description of the BAM file format here: https://samtools.github.io/hts-specs/SAMv1.pdf.
 
