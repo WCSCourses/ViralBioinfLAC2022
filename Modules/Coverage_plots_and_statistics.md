@@ -13,7 +13,7 @@ Here we are going to use the software packages [SAMtools](http://samtools.source
    format and SAMtools. Bioinformatics, **25**, 2078–2079.       
    https://doi.org/10.1093/bioinformatics/btp352.      
 
-Qualimap and SAMtools are already  installed on the virtual machine. However, it you need to install the Qualimap software, you can obtain it from: http://qualimap.conesalab.org/ and SAMtools from  http://samtools.sourceforge.net/.
+Qualimap and SAMtools are already installed on the virtual machine. However, if you need to install the Qualimap software, you can obtain it from: http://qualimap.conesalab.org/ and SAMtools from  http://samtools.sourceforge.net/.
 
 We can run the Qualimap software either:
 
