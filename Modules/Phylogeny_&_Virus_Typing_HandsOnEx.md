@@ -7,8 +7,7 @@
 **Instructors: Dr. Carolina Torres & Dr. Marta Giovanetti**
 
 
-**Introduction to the Hands-on exercises**
-
+## Introduction to the Hands-on exercises
 
 **DATASET 1: SARS-CoV-2**
 
@@ -44,9 +43,9 @@ The datasets (unaligned set of sequences: **LAC_SARSCoV2.fasta / LAC_DENV.fasta*
 /home/manager/course_data/Phylogenetics_methods_and_tree_building/LAC/2_DENV.fasta
 
 
-**Exercise**
+### Exercise
 
-**A.	Alignment with MAFFT**
+### A.	Alignment with MAFFT
 
 MAFFT is an advanced tool that can align using different alignment algorithms for different applications such as L-INS-i (accurate; recommended for <200 sequences), FFT-NS-2 (fast; recommended for >2,000 sequences), etc. It can be run locally or on online servers. To understand the algorithms and their use cases, please refer to https://mafft.cbrc.jp/alignment/software/algorithms/algorithms.html
 
@@ -61,7 +60,7 @@ Please note that the procedure below is for the SARS-CoV-2 dataset, so if you wi
 
 2. Type: mafft --auto LAC_SARSCoV2.fasta > LAC_SARSCoV2_aln.fasta
 
-Usage:
+**Usage:**
 mafft [options] input > output
 
 --auto  automatically switches algorithm according to data size.
@@ -77,7 +76,7 @@ mafft [options] input > output
 Select the region to realign -> Align -> Realign selected block.
 5. Save this alignment: File -> Save as fasta -> LAC_SARSCoV2_muscle_aln.fasta
 
-**B.	Editing the sequence alignment**
+### B.	Editing the sequence alignment
 After aligning, it is advisable to visually review the sequence alignments obtained before proceeding to phylogenetic analysis. Sometimes, a manual edition is needed, especially at the ends of the alignment, where only some sequences have reliable information. For this exercise, you can use any of the alignments generated from MAFFT or Aliview (Muscle). 
 
 The following instructions show the use of the alignment of SARS-CoV-2 generated with MAFFT.
