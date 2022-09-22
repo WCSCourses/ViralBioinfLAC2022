@@ -71,6 +71,8 @@ mafft --auto LAC_SARSCoV2.fasta > LAC_SARSCoV2_aln.fasta
 >--auto: automatically switches algorithm according to data size.
 
 
+
+
 #### [OPTIONAL] Alignment with Muscle (in Aliview)
 
 1. Execute Aliview and open the alignment: 
@@ -78,25 +80,27 @@ mafft --auto LAC_SARSCoV2.fasta > LAC_SARSCoV2_aln.fasta
 File -> Open File: LAC_SARSCoV2.fasta
 ```
 
-3. Explore the Aliview window and locate the following elements: Sequence names, Sequences, Ruler.
+2. Explore the Aliview window and locate the following elements: Sequence names, Sequences, Ruler.
 
-4. Perform an alignment with the default program (Muscle): 
+
+3. Perform an alignment with the default program (Muscle): 
 ```
 Align -> Realign everything -> OK.
 ```
 
 *[The program will start, and different steps will be shown. Once the alignment is completed, the output file will be automatically shown.]*
 
-5. Check the alignment and realign regions if needed: 
+4. Check the alignment and realign regions if needed: 
 
 ```
 Select the region to realign -> Align -> Realign selected block.
 ```
 
-6. Save this alignment: 
+5. Save this alignment: 
 ```
 File -> Save as fasta -> LAC_SARSCoV2_muscle_aln.fasta
 ```
+
 
 ### B.	Editing the sequence alignment
 
