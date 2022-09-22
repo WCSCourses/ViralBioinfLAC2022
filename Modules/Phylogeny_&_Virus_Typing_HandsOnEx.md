@@ -61,11 +61,11 @@ Please note that the procedure below is for the SARS-CoV-2 dataset, so if you wi
 
 
 **Usage:**
+```
+mafft [options] input > output
 
->mafft [options] input > output
-
->--auto  automatically switches algorithm according to data size.
-
+--auto: automatically switches algorithm according to data size.
+```
 
 
 **[OPTIONAL] Alignment with Muscle (in Aliview).**
@@ -93,9 +93,12 @@ The following instructions show the use of the alignment of SARS-CoV-2 generated
 
 1. Execute Aliview and open the alignment: 
 >File -> Open File: LAC_SARSCoV2_aln.fasta
+
 2. Check the alignment and realign regions if needed: 
 >Select the region to realign -> Align -> Realign selected block.
+
 3. Select the region to be deleted:
+
 a) For the left end of the alignment, select the last nucleotide of the region to be deleted (as in the figure below):
  
 >- Select -> Expand Selection Left 
@@ -153,7 +156,7 @@ You can find many basic and advanced tutorials at http://www.iqtree.org/doc/
 
 
 **Usage:**
-
+```
 -s: to specify the name of the alignment file, always required by IQ-TREE to work. 
 
 -m: to specify a model selection strategy (if no option is specified, -m MFP is used by default).
@@ -161,6 +164,7 @@ You can find many basic and advanced tutorials at http://www.iqtree.org/doc/
 -B: to specify the number of replicates for Ultrafast Bootstrap Approximation in IQ-TREE v2.
 
 -alrt: to specify the number of replicates for SH-aLRT.
+```
 
 Once the process is finished, the output files will be found in the folder, including:
 
@@ -171,7 +175,8 @@ Once the process is finished, the output files will be found in the folder, incl
 **.log:** log file of the entire run (also printed on the screen).
 
 
-**Questions**
+#### Questions
+
 1.	Which is the best-fit evolutionary model for this dataset according to the Bayesian information criterion (BIC)? (open the “.iqtree” or the “.log” files with TextEditor)
 
 2.	What parameters does the best-fit model have?
@@ -204,13 +209,14 @@ Once the process is finished, the output files will be found in the folder, incl
 In addition, you can modify the size of the fonts (in Tip Labels, Legend, etc).
 
 
-**Activity:**
+#### Activity:
 
 1.	Assign a Pango lineage to the “query” sequences of SARS-CoV-2.
 
 2.	To what genotype of DENV-4 do the “query” sequences belong? Are they part of a single transmission chain?
 
 3.	DENV-4 sequences from Brazil are monophyletic?
+
 
 
 
@@ -224,13 +230,15 @@ To perform a likelihood mapping analysis (ignoring tree search) with 2000 quarte
 >iqtree2 -s SARSCoV2_aln_cut.fasta -lmap 2000 -n 0 -m MF
 
 
-  -lmap: Specify the number of quartets to be randomly drawn. If you specify -lmap ALL, all unique quartets will be drawn, instead. 
+**Usage:**
+
+**-lmap:** Specify the number of quartets to be randomly drawn. If you specify -lmap ALL, all unique quartets will be drawn, instead. 
 >[TIP: The number of quartets specified via -lmap is recommended to be at least 25 times the number of sequences in the alignment, such that each sequence is covered ~100 times in the set of quartets drawn.]
 
-  -n 0: Skip subsequent tree search, useful when you only want to assess the phylogenetic information of the alignment.
+**-n 0:** Skip subsequent tree search, useful when you only want to assess the phylogenetic information of the alignment.
 >[Note that if you already have selected an evolutionary model from a previous analysis with this dataset, you can specify it in the command option -m, for example: -m TIM2+F+I+G4]
 
-You can now view the likelihood mapping plot file SARSCoV2_aln_cut.lmap.eps (or .svg file), which shows phylogenetic information of the alignment SARSCoV2_aln_cut.fasta. 
+You can now view the likelihood mapping plot file **SARSCoV2_aln_cut.lmap.eps** (or .svg file), which shows phylogenetic information of the alignment SARSCoV2_aln_cut.fasta. 
 
 The figure will look like this:
 
