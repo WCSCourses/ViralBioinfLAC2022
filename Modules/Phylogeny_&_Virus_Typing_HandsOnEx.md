@@ -43,8 +43,6 @@ The datasets (unaligned set of sequences: **LAC_SARSCoV2.fasta / LAC_DENV.fasta*
 /home/manager/course_data/Phylogenetics_methods_and_tree_building/LAC/2_DENV.fasta
 
 
-### Exercise
-
 ### A.	Alignment with MAFFT
 
 MAFFT is an advanced tool that can align using different alignment algorithms for different applications such as L-INS-i (accurate; recommended for <200 sequences), FFT-NS-2 (fast; recommended for >2,000 sequences), etc. It can be run locally or on online servers. To understand the algorithms and their use cases, please refer to https://mafft.cbrc.jp/alignment/software/algorithms/algorithms.html
@@ -61,6 +59,7 @@ Please note that the procedure below is for the SARS-CoV-2 dataset, so if you wi
 2. Type: mafft --auto LAC_SARSCoV2.fasta > LAC_SARSCoV2_aln.fasta
 
 **Usage:**
+
 mafft [options] input > output
 
 --auto  automatically switches algorithm according to data size.
@@ -77,6 +76,7 @@ Select the region to realign -> Align -> Realign selected block.
 5. Save this alignment: File -> Save as fasta -> LAC_SARSCoV2_muscle_aln.fasta
 
 ### B.	Editing the sequence alignment
+
 After aligning, it is advisable to visually review the sequence alignments obtained before proceeding to phylogenetic analysis. Sometimes, a manual edition is needed, especially at the ends of the alignment, where only some sequences have reliable information. For this exercise, you can use any of the alignments generated from MAFFT or Aliview (Muscle). 
 
 The following instructions show the use of the alignment of SARS-CoV-2 generated with MAFFT.
@@ -111,7 +111,7 @@ c) Repeat the procedure for internal regions if needed:
 This file will be used to estimate the substitution model and infer the phylogenetic tree.
 
 
-##Activity 2: Phylogenetic analysis
+## Activity 2: Phylogenetic analysis
 
 Specific objectives of this practice:
 - To become familiar with the IQ-TREE and Figtree programs.
@@ -121,13 +121,14 @@ Specific objectives of this practice:
 Datasets to use: **LAC_SARSCoV2_aln_cut.fasta (or DENV_aln_cut.fasta)**, from the practical activity 1.
 
 **Introduction to the IQ-TREE program:**
+
 This program allows you to perform phylogenetic analysis by Maximum Likelihood. It uses efficient algorithms to explore the tree space, allowing very large matrices to be analyzed with reliable results (hundreds or thousands of sequences). It allows estimating the evolutionary model (ModelFinder module) followed by the phylogenetic inference, and implements support measures to evaluate the reliability of the groupings or branches (Bootstrap, Ultrafast Bootstrap Approximation and probabilistic contrasts). The program can be downloaded and run locally (http://www.iqtree.org/), or on online servers such as http://iqtree.cibiv.univie.ac.at/ | https://www.phylo.org/  | https://www.hiv.lanl.gov/content/sequence/IQTREE/iqtree.html
 
 You can find many basic and advanced tutorials at http://www.iqtree.org/doc/
 
 *Please note that the procedure below is for the SARS-CoV-2 dataset, so if you will be analyzing the Dengue dataset as well, you need to go to the directory where that dataset is located and replace the file names in the instructions below.*
 
-### Exercise
+
 ### A.	Phylogenetic Inference by Maximum Likelihood with IQ-TREE
 
 **Phylogenetic inference + support (Ultrafast Bootstrap Approximation + SH-aLRT)**
@@ -138,14 +139,21 @@ You can find many basic and advanced tutorials at http://www.iqtree.org/doc/
 4.	Type: iqtree2 -s LAC_SARSCoV2_aln_cut.fasta -m MFP -B 10000 -alrt 1000
 
 **Usage:**
+
 -s    to specify the name of the alignment file, always required by IQ-TREE to work. 
+
 -m    to specify a model selection strategy (if no option is specified, -m MFP is used by default).
+
 -B    to specify the number of replicates for Ultrafast Bootstrap Approximation in IQ-TREE v2.
+
 -alrt  to specify the number of replicates for SH-aLRT.
 
 Once the process is finished, the output files will be found in the folder, including:
+
 **.treefile:** the ML tree in NEWICK format, which can be visualized by any supported tree viewer programs like FigTree.
+
 **.iqtree:** the main report file that is self-readable. You should look at this file to see the computational results. It also contains a textual representation of the final tree.
+
 **.log:** log file of the entire run (also printed on the screen).
 
 
@@ -158,23 +166,32 @@ Once the process is finished, the output files will be found in the folder, incl
 
 1. Open the FigTree program -> In the terminal, type: figtree 
 File -> Open -> select the file LAC_SARSCoV2_aln_cut.treefile
+
 3. Select a name for annotated values: “SH/UFB”
+
 4. In this exercise, it is recommended to root the tree in the branch that connects lineage A with lineage B: 
 Select the branch -> Reroot.
+
 5. It is recommended to order the tree to improve its visualization:
 Tree -> Increasing Node Order
+
 6. Display support values: Branch labels -> Display "SH/UFB".
+
 7. Annotate and color the tree according to the locations:
 -Menu File -> Import annotations -> load the file “LAC_SARSCoV2_location.txt” from its folder.
 -Menu Tree -> Annotate Nodes from tips -> Annotation: Region.
 -Appearance -> Colour by -> Region
 -Tip Labels -> Colour by: Region
 -Legend -> Click to show the legend -> Attribute: Region.
+
 In addition, you can modify the size of the fonts (in Tip Labels, Legend, etc).
 
 
 **Activity:**
+
 1.	Assign a Pango lineage to the “query” sequences of SARS-CoV-2.
+
 2.	To what genotype of DENV-4 do the “query” sequences belong? Are they part of a single transmission chain?
+
 3.	DENV-4 sequences from Brazil are monophyletic?
 
