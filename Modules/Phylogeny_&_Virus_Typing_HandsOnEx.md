@@ -68,6 +68,7 @@ mafft --auto LAC_SARSCoV2.fasta > LAC_SARSCoV2_aln.fasta
 
 >**Usage:**
 >mafft [options] input > output
+>
 >--auto: automatically switches algorithm according to data size.
 
 
