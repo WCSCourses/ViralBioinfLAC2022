@@ -1,7 +1,8 @@
-**Viral Genomics and Bioinformatics Latin America and the Caribbean**
+# Viral Genomics and Bioinformatics Latin America and the Caribbean
+
 10 - 14 October 2022
 
-**Topic: Phylogenetics & Virus Typing**
+## Topic: Phylogenetics & Virus Typing
 
 **Instructors: Dr. Carolina Torres & Dr. Marta Giovanetti**
 
@@ -27,7 +28,7 @@ For that purpose, we have built a dataset consisting of 37 complete genome seque
 
 
 
-**Activity I: Multiple Sequence Alignment (MSA)**
+## Activity I: Multiple Sequence Alignment (MSA)
 
 **Specific objectives of this practice:**
 
