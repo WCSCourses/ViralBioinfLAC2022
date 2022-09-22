@@ -8,6 +8,7 @@
 
 **Introduction to the Hands-on exercises**
 
+
 **DATASET 1: SARS-CoV-2**
 
 SARS-CoV-2 diversity and evolution are reflected by both variants and lineages. The Pango nomenclature is a system for identifying SARS-CoV-2 genetic lineages of epidemiological relevance and is being used by researchers and public health agencies worldwide to track the transmission and spread of SARS-CoV-2, including variants of concern (VOCs) (https://www.pango.network/).
@@ -91,10 +92,15 @@ a) For the left end of the alignment, select the last nucleotide of the region t
 - Select -> Expand Selection Left 
 - Edit -> Delete selected
 
+![image](https://user-images.githubusercontent.com/64616141/191759035-0462d641-70ce-4e6f-9a56-398ed8951931.png)
+
+
 b) Repeat the procedure for the right end, select the first nucleotide of the region to be deleted (as in the figure below):
 - Select -> Expand Selection Right
 - Edit -> Delete selected
  
+ ![image](https://user-images.githubusercontent.com/64616141/191759156-904fe580-5697-4394-b6da-35cc6efb3008.png)
+
 
 c) Repeat the procedure for internal regions if needed:
 - Select the region -> Edit -> Delete selected.
