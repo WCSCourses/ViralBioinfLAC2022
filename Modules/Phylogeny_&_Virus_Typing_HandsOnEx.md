@@ -194,9 +194,13 @@ You can find many basic and advanced tutorials at http://www.iqtree.org/doc/
 ```
 
 >**Usage:**
+
 >**-s:** to specify the name of the alignment file, always required by IQ-TREE to work. 
+
 >**-m:** to specify a model selection strategy (if no option is specified, -m MFP is used by default).
+
 >**-B:** to specify the number of replicates for Ultrafast Bootstrap Approximation in IQ-TREE v2.
+
 >**-alrt:** to specify the number of replicates for SH-aLRT.
 
 
@@ -263,8 +267,7 @@ In addition, you can modify the size of the fonts (in Tip Labels, Legend, etc).
 
 3.	DENV-4 sequences from Brazil are monophyletic?
 
-
-
+----------------------------------------------------------------------------------
 
 ### C.	[Optional] Additional activity: Phylogenetic signal
 
@@ -273,8 +276,9 @@ IQ-TREE implements the likelihood mapping approach (Strimmer and von Haeseler, 1
 To perform a likelihood mapping analysis (ignoring tree search) with 2000 quartets for the alignment SARSCoV2_aln_cut.fasta with a model being automatically selected, create a new directory “PhyloSignal” and paste within the file SARSCoV2_aln_cut.fasta. 
 
 -Open a terminal in that directory and type:
->iqtree2 -s SARSCoV2_aln_cut.fasta -lmap 2000 -n 0 -m MF
-
+```
+iqtree2 -s SARSCoV2_aln_cut.fasta -lmap 2000 -n 0 -m MF
+```
 
 **Usage:**
 
