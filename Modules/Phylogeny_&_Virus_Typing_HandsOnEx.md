@@ -148,7 +148,7 @@ c) Repeat the procedure for internal regions if needed:
 
 4. Save the edited alignment:
 ```
--	File -> Save as fasta -> LAC_SARSCoV2_aln_edit.fasta
+- File -> Save as fasta -> LAC_SARSCoV2_aln_edit.fasta
 ```
 
 This file will be used to estimate the substitution model and infer the phylogenetic tree.
