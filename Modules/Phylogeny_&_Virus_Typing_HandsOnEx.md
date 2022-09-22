@@ -38,10 +38,12 @@ To carry out an alignment, the sequences need to be available in a file that can
 
 The datasets (unaligned set of sequences: **LAC_SARSCoV2.fasta / LAC_DENV.fasta**) are located in:
 
->/home/manager/course_data/Phylogenetics_methods_and_tree_building/LAC/1_SARSCoV2/LAC_SARSCoV2.fasta
-
->/home/manager/course_data/Phylogenetics_methods_and_tree_building/LAC/2_DENV.fasta
-
+```
+/home/manager/course_data/Phylogenetics_methods_and_tree_building/LAC/1_SARSCoV2/LAC_SARSCoV2.fasta
+```
+```
+/home/manager/course_data/Phylogenetics_methods_and_tree_building/LAC/2_DENV.fasta
+```
 
 ### A.	Alignment with MAFFT
 
@@ -54,34 +56,47 @@ Please note that the procedure below is for the SARS-CoV-2 dataset, so if you wi
 
 1. Open a Terminal and go into the directory	that contains the dataset to align: LAC_SARSCoV2.fasta
 
->/home/manager/course_data/Phylogenetics_methods_and_tree_building/LAC/1_SARSCoV2/LAC_SARSCoV2.fasta
+```
+/home/manager/course_data/Phylogenetics_methods_and_tree_building/LAC/1_SARSCoV2/LAC_SARSCoV2.fasta
+```
 
 2. Type: 
->mafft --auto LAC_SARSCoV2.fasta > LAC_SARSCoV2_aln.fasta
 
-
-**Usage:**
 ```
-mafft [options] input > output
-
---auto: automatically switches algorithm according to data size.
+mafft --auto LAC_SARSCoV2.fasta > LAC_SARSCoV2_aln.fasta
 ```
 
+>**Usage:**
+>mafft [options] input > output
+>--auto: automatically switches algorithm according to data size.
 
-**[OPTIONAL] Alignment with Muscle (in Aliview).**
+
+#### [OPTIONAL] Alignment with Muscle (in Aliview)
 
 1. Execute Aliview and open the alignment: 
->File -> Open File: LAC_SARSCoV2.fasta
+```
+File -> Open File: LAC_SARSCoV2.fasta
+```
+
 3. Explore the Aliview window and locate the following elements: Sequence names, Sequences, Ruler.
+
 4. Perform an alignment with the default program (Muscle): 
->Align -> Realign everything -> OK.
+```
+Align -> Realign everything -> OK.
+```
 
 *[The program will start, and different steps will be shown. Once the alignment is completed, the output file will be automatically shown.]*
 
 5. Check the alignment and realign regions if needed: 
->Select the region to realign -> Align -> Realign selected block.
+
+```
+Select the region to realign -> Align -> Realign selected block.
+```
+
 6. Save this alignment: 
->File -> Save as fasta -> LAC_SARSCoV2_muscle_aln.fasta
+```
+File -> Save as fasta -> LAC_SARSCoV2_muscle_aln.fasta
+```
 
 ### B.	Editing the sequence alignment
 
@@ -92,34 +107,45 @@ The following instructions show the use of the alignment of SARS-CoV-2 generated
 **Edition in Aliview:**
 
 1. Execute Aliview and open the alignment: 
->File -> Open File: LAC_SARSCoV2_aln.fasta
+```
+File -> Open File: LAC_SARSCoV2_aln.fasta
+```
 
 2. Check the alignment and realign regions if needed: 
->Select the region to realign -> Align -> Realign selected block.
+```
+Select the region to realign -> Align -> Realign selected block.
+```
 
 3. Select the region to be deleted:
 
 a) For the left end of the alignment, select the last nucleotide of the region to be deleted (as in the figure below):
  
->- Select -> Expand Selection Left 
->- Edit -> Delete selected
+```
+- Select -> Expand Selection Left 
+- Edit -> Delete selected
+```
 
 ![image](https://user-images.githubusercontent.com/64616141/191759035-0462d641-70ce-4e6f-9a56-398ed8951931.png)
 
 
 b) Repeat the procedure for the right end, select the first nucleotide of the region to be deleted (as in the figure below):
->- Select -> Expand Selection Right
->- Edit -> Delete selected
- 
+```
+- Select -> Expand Selection Right
+- Edit -> Delete selected
+```
+
  ![image](https://user-images.githubusercontent.com/64616141/191759156-904fe580-5697-4394-b6da-35cc6efb3008.png)
 
 
 c) Repeat the procedure for internal regions if needed:
->- Select the region -> Edit -> Delete selected.
-
+```
+- Select the region -> Edit -> Delete selected.
+```
 
 4. Save the edited alignment:
->-	File -> Save as fasta -> LAC_SARSCoV2_aln_edit.fasta
+```
+-	File -> Save as fasta -> LAC_SARSCoV2_aln_edit.fasta
+```
 
 This file will be used to estimate the substitution model and infer the phylogenetic tree.
 
@@ -147,24 +173,27 @@ You can find many basic and advanced tutorials at http://www.iqtree.org/doc/
 **Phylogenetic inference + support (Ultrafast Bootstrap Approximation + SH-aLRT)**
 
 1.	Open a Terminal and go into the folder that contains the edited alignment to analyze:
->~/course_data/Phylogenetics_methods_and_tree_building/LAC/1_SARSCoV2/LAC_SARSCoV2_aln_cut.fasta
+```
+~/course_data/Phylogenetics_methods_and_tree_building/LAC/1_SARSCoV2/LAC_SARSCoV2_aln_cut.fasta
+```
+
 2.	Type: 
+```
 >iqtree2 -h 
+```
 (this command allows you to see all available options, check those that you will use in the next step).
+
 3.	Type: 
+```
 >iqtree2 -s LAC_SARSCoV2_aln_cut.fasta -m MFP -B 10000 -alrt 1000
-
-
-**Usage:**
 ```
--s: to specify the name of the alignment file, always required by IQ-TREE to work. 
 
--m: to specify a model selection strategy (if no option is specified, -m MFP is used by default).
+>**Usage:**
+>**-s:** to specify the name of the alignment file, always required by IQ-TREE to work. 
+>**-m:** to specify a model selection strategy (if no option is specified, -m MFP is used by default).
+>**-B:** to specify the number of replicates for Ultrafast Bootstrap Approximation in IQ-TREE v2.
+>**-alrt:** to specify the number of replicates for SH-aLRT.
 
--B: to specify the number of replicates for Ultrafast Bootstrap Approximation in IQ-TREE v2.
-
--alrt: to specify the number of replicates for SH-aLRT.
-```
 
 Once the process is finished, the output files will be found in the folder, including:
 
@@ -185,26 +214,38 @@ Once the process is finished, the output files will be found in the folder, incl
 ### B.	Tree visualization
 
 1. Open the FigTree program: In the terminal, type: 
->figtree 
->File -> Open -> select the file LAC_SARSCoV2_aln_cut.treefile
+```
+figtree 
+```
+```
+File -> Open -> select the file LAC_SARSCoV2_aln_cut.treefile
+```
 
-3. Select a name for annotated values: “SH/UFB”
+3. Select a name for annotated values: **“SH/UFB”**
 
 4. In this exercise, it is recommended to root the tree in the branch that connects lineage A with lineage B: 
->Select the branch -> Reroot.
+```
+Select the branch -> Reroot.
+```
 
 5. It is recommended to order the tree to improve its visualization:
->Tree -> Increasing Node Order
+```
+Tree -> Increasing Node Order
+```
 
 6. Display support values: 
->Branch labels -> Display "SH/UFB".
+```
+Branch labels -> Display "SH/UFB".
+```
 
 7. Annotate and color the tree according to the locations:
->-Menu File -> Import annotations -> load the file “LAC_SARSCoV2_location.txt” from its folder.
->-Menu Tree -> Annotate Nodes from tips -> Annotation: Region.
->-Appearance -> Colour by -> Region
->-Tip Labels -> Colour by: Region
->-Legend -> Click to show the legend -> Attribute: Region.
+```
+-Menu File -> Import annotations -> load the file “LAC_SARSCoV2_location.txt” from its folder.
+-Menu Tree -> Annotate Nodes from tips -> Annotation: Region.
+-Appearance -> Colour by -> Region
+-Tip Labels -> Colour by: Region
+-Legend -> Click to show the legend -> Attribute: Region.
+```
 
 In addition, you can modify the size of the fonts (in Tip Labels, Legend, etc).
 
