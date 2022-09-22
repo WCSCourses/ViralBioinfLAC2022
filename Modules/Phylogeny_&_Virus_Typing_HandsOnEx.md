@@ -212,3 +212,34 @@ In addition, you can modify the size of the fonts (in Tip Labels, Legend, etc).
 
 3.	DENV-4 sequences from Brazil are monophyletic?
 
+
+
+### C.	[Optional] Additional activity: Phylogenetic signal
+
+IQ-TREE implements the likelihood mapping approach (Strimmer and von Haeseler, 1997; https://doi.org/10.1073/pnas.94.13.6815) to assess the phylogenetic information of an input alignment. The detailed results will be printed to .iqtree report file. The likelihood mapping plots will be printed to .lmap.svg and .lmap.eps files.
+
+To perform a likelihood mapping analysis (ignoring tree search) with 2000 quartets for the alignment SARSCoV2_aln_cut.fasta with a model being automatically selected, create a new directory “PhyloSignal” and paste within the file SARSCoV2_aln_cut.fasta. 
+
+-Open a terminal in that directory and type:
+>iqtree2 -s SARSCoV2_aln_cut.fasta -lmap 2000 -n 0 -m MF
+
+
+  -lmap: Specify the number of quartets to be randomly drawn. If you specify -lmap ALL, all unique quartets will be drawn, instead. 
+>[TIP: The number of quartets specified via -lmap is recommended to be at least 25 times the number of sequences in the alignment, such that each sequence is covered ~100 times in the set of quartets drawn.]
+
+  -n 0: Skip subsequent tree search, useful when you only want to assess the phylogenetic information of the alignment.
+>[Note that if you already have selected an evolutionary model from a previous analysis with this dataset, you can specify it in the command option -m, for example: -m TIM2+F+I+G4]
+
+You can now view the likelihood mapping plot file SARSCoV2_aln_cut.lmap.eps (or .svg file), which shows phylogenetic information of the alignment SARSCoV2_aln_cut.fasta. 
+
+The figure will look like this:
+
+![image](https://user-images.githubusercontent.com/64616141/191771534-c7b0e100-0a79-4919-a77a-515491462559.png)
+
+**On the top:** distribution of quartets depicted by dots on the likelihood mapping plot. 
+**On the left:** the three areas show support for one of the different groupings like (a,b)-(c,d). 
+**On the right:** quartets falling into the three corners are informative. 
+
+Quartets in the three rectangles are partly informative and those in the center are uninformative. A good data set should have a high number of informative quartets and a low number of uninformative quartets. 
+The meanings can also be found in the LIKELIHOOD MAPPING STATISTICS section of the report file .iqtree.
+
