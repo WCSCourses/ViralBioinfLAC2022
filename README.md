@@ -80,7 +80,7 @@ The Viral Genomics and Bioinformatics course will teach participants how to anal
 
 **Module 11 - Introduction to phylogenetic methods**  
 
-[Online Manual - Phylogeny and Virus Typing](Modules/Phylogeny_&_Virus_Typing_HandsOnEx.md)   
+[Online Manual - Phylogenetics and Virus Typing](Modules/Phylogeny_&_Virus_Typing_HandsOnEx.md)   
 [PDF Phylogeny Help Doc](Modules/Phylogeny_pracs_help.pdf)    
 
 **Module 12 - SARS-CoV-2 workflows**  
