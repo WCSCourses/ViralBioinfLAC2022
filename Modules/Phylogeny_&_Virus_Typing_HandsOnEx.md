@@ -72,8 +72,7 @@ mafft --auto LAC_SARSCoV2.fasta > LAC_SARSCoV2_aln.fasta
 >--auto: automatically switches algorithm according to data size.
 
 
-
-
+-------------------------
 #### [OPTIONAL] Alignment with Muscle (in Aliview)
 
 1. Execute Aliview and open the alignment: 
@@ -101,7 +100,7 @@ Select the region to realign -> Align -> Realign selected block.
 ```
 File -> Save as fasta -> LAC_SARSCoV2_muscle_aln.fasta
 ```
-
+--------------------------------
 
 ### B.	Editing the sequence alignment
 
@@ -172,7 +171,7 @@ You can find many basic and advanced tutorials at http://www.iqtree.org/doc/
 
 >*Please note that the procedure below is for the SARS-CoV-2 dataset, so if you will be analyzing the Dengue dataset as well, you need to go to the directory where that dataset is located and replace the file names in the instructions below.*
 
-
+-----------------------
 ### A.	Phylogenetic Inference by Maximum Likelihood with IQ-TREE
 
 **Phylogenetic inference + support (Ultrafast Bootstrap Approximation + SH-aLRT)**
@@ -194,22 +193,17 @@ You can find many basic and advanced tutorials at http://www.iqtree.org/doc/
 ```
 
 >**Usage:**
-
+>
 >**-s:** to specify the name of the alignment file, always required by IQ-TREE to work. 
-
 >**-m:** to specify a model selection strategy (if no option is specified, -m MFP is used by default).
-
 >**-B:** to specify the number of replicates for Ultrafast Bootstrap Approximation in IQ-TREE v2.
-
 >**-alrt:** to specify the number of replicates for SH-aLRT.
 
 
 Once the process is finished, the output files will be found in the folder, including:
 
 **.treefile:** the ML tree in NEWICK format, which can be visualized by any supported tree viewer programs like FigTree.
-
 **.iqtree:** the main report file that is self-readable. You should look at this file to see the computational results. It also contains a textual representation of the final tree.
-
 **.log:** log file of the entire run (also printed on the screen).
 
 
@@ -219,6 +213,7 @@ Once the process is finished, the output files will be found in the folder, incl
 
 2.	What parameters does the best-fit model have?
 
+--------------------
 
 ### B.	Tree visualization
 
@@ -266,6 +261,7 @@ In addition, you can modify the size of the fonts (in Tip Labels, Legend, etc).
 2.	To what genotype of DENV-4 do the “query” sequences belong? Are they part of a single transmission chain?
 
 3.	DENV-4 sequences from Brazil are monophyletic?
+
 
 ----------------------------------------------------------------------------------
 
