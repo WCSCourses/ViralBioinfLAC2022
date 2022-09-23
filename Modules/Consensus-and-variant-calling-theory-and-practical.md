@@ -1,4 +1,4 @@
-#Consensus and variant calling theory and practical**
+# Consensus and variant calling theory and practical
 
 *9.1 Overview*
 
