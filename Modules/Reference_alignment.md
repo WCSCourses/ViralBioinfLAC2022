@@ -29,14 +29,13 @@ Now that is done, let's navigate to the proper folder:
 ``cd /home/manager/course_data/Reference_alignment/07-dengue_align/``
 
 
->*7.3 Preparing our raw reads for mapping*
+## Preparing our raw reads for mapping
 
->Let's first start by cleaning up our data:
+Let's first start by cleaning up our data:
 
------------------------------------------------------------------------
-trim_galore -q 25 --length 50 \--paired dengue.read1.fq.gz
-dengue.read2.fq.gz
------------------------------------------------------------------------
+
+``trim_galore -q 25 --length 50 --paired dengue.read1.fq.gz dengue.read2.fq.gz``
+
 
 >**--q 25** = trim the 3' end of the reads -- remove nucleotides less
 than Phred Quality 25
