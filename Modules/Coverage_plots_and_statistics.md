@@ -40,14 +40,6 @@ These datasets are already downloaded and provided to you in the virtual machine
 Now, when you list the contents of the current directory with ``ls -lh``, you should see something like this:
 
     total 16M
-    -rw-rw-r-- 1 manager manager 2.9K Jul 25 16:20 ARTIC_amplicons.bed
-    -rw-rw-r-- 1 manager manager 8.0M Jul 25 16:20 ERR8261957.bam
-    -rw-rw-r-- 1 manager manager  152 Jul 25 16:20 ERR8261957.bam.bai
-    -rw-rw-r-- 1 manager manager 7.6M Jul 25 16:20 ERR8261968.bam
-    -rw-rw-r-- 1 manager manager  152 Jul 25 16:20 ERR8261968.bam.bai
-    drwxrwxr-x 2 manager manager 4.0K Jul 25 16:20 images
-    -rw-rw-r-- 1 manager manager 1.2K Jul 25 16:20 readME.md
-    total 16M
     -rw-rw-r-- 1 manager manager 2.9K Aug  8 09:27 ARTIC_amplicons.bed
     -rw-rw-r-- 1 manager manager 8.0M Aug  8 09:27 ERR8261957.bam
     -rw-rw-r-- 1 manager manager  152 Aug  8 09:27 ERR8261957.bam.bai
