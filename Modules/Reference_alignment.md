@@ -1,6 +1,6 @@
-**7 Reference alignment**
+# 7 Reference alignment
 
-*7.1 Overview*
+## Overview
 
 ![Reference-alignment-image1](https://github.com/WCSCourses/ViralBioinfAsia2022/blob/main/Modules/images/Reference-alignment-image1.png)
 
