@@ -1,5 +1,4 @@
-# Consensus and variant calling theory and practical
-
+# Consensus and variant calling
 *9.1 Overview*
 
 ![Consensus-image1.png](https://github.com/WCSCourses/ViralBioinfAsia2022/blob/main/Modules/images/Consensus-image1.png)
