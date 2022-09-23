@@ -1,16 +1,16 @@
-# 7 Reference alignment
+# Reference alignment
 
 ## Overview
 
 ![Reference-alignment-image1](https://github.com/WCSCourses/ViralBioinfAsia2022/blob/main/Modules/images/Reference-alignment-image1.png)
 
->*7.2 Practical data sets*
+## Practical data sets
 
->Let's start by doing some quick prep/housekeeping on our dataset:
+Let's start by doing some quick prep/housekeeping on our dataset:
 
------------------------------------------------------------------------
-unzip /home/manager/course_data/Reference_alignment/Reference_alignment.zip
------------------------------------------------------------------------
+
+``unzip /home/manager/course_data/Reference_alignment/Reference_alignment.zip``
+
 mv /home/manager/course_data/Reference_alignment/Reference_alignment/07-dengue_align /home/manager/course_data/Reference_alignment/
 -----------------------------------------------------------------------
 mv /home/manager/course_data/Reference_alignment/Reference_alignment/07-chikv-align /home/manager/course_data/Reference_alignment/
