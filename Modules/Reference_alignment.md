@@ -11,14 +11,14 @@ Let's start by doing some quick prep/housekeeping on our dataset:
 
 ``unzip /home/manager/course_data/Reference_alignment/Reference_alignment.zip``
 
-mv /home/manager/course_data/Reference_alignment/Reference_alignment/07-dengue_align /home/manager/course_data/Reference_alignment/
------------------------------------------------------------------------
-mv /home/manager/course_data/Reference_alignment/Reference_alignment/07-chikv-align /home/manager/course_data/Reference_alignment/
------------------------------------------------------------------------
-rm -r /home/manager/course_data/Reference_alignment/Reference_alignment/
------------------------------------------------------------------------
-rm -r /home/manager/course_data/Reference_alignment/__MACOSX/
------------------------------------------------------------------------
+``mv /home/manager/course_data/Reference_alignment/Reference_alignment/07-dengue_align /home/manager/course_data/Reference_alignment/``
+
+``mv /home/manager/course_data/Reference_alignment/Reference_alignment/07-chikv-align /home/manager/course_data/Reference_alignment/``
+
+``rm -r /home/manager/course_data/Reference_alignment/Reference_alignment/``
+
+``rm -r /home/manager/course_data/Reference_alignment/__MACOSX/``
+
 
 
 >*NOTE* Be careful when using 'rm -r' ! You can easily delete quite a bit of data this way with no chance to recover it! When doing this, it's  a >good idea to use *absolute paths* to avoid deleting something important by accident.
