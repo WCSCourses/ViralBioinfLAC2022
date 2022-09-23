@@ -47,6 +47,17 @@ Now, when you list the contents of the current directory with ``ls -lh``, you sh
     -rw-rw-r-- 1 manager manager  152 Jul 25 16:20 ERR8261968.bam.bai
     drwxrwxr-x 2 manager manager 4.0K Jul 25 16:20 images
     -rw-rw-r-- 1 manager manager 1.2K Jul 25 16:20 readME.md
+    total 16M
+    -rw-rw-r-- 1 manager manager 2.9K Aug  8 09:27 ARTIC_amplicons.bed
+    -rw-rw-r-- 1 manager manager 8.0M Aug  8 09:27 ERR8261957.bam
+    -rw-rw-r-- 1 manager manager  152 Aug  8 09:27 ERR8261957.bam.bai
+    -rw-rw-r-- 1 manager manager 7.6M Aug  8 09:27 ERR8261968.bam
+    -rw-rw-r-- 1 manager manager  152 Aug  8 09:27 ERR8261968.bam.bai
+    drwxrwxr-x 2 manager manager 4.0K Aug  8 09:27 images
+    -rw-rw-r-- 1 manager manager 1.2K Aug  8 09:27 readME.md
+    -rw-rw-r-- 1 manager manager  30K Aug  8 09:27 reference_genome.fasta
+    -rw-rw-r-- 1 manager manager   27 Aug  8 09:27 reference_genome.fasta.fai
+    -rw-rw-r-- 1 manager manager  15K Aug  8 09:27 reference_genome.gff3
 
 So, you can see we have the two BAM files, along with their accompanying index files. These BAM files consist of genomic sequence reads aligned against the [Wuhan-Hu-1 reference genome](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512.2) sequence.
 
