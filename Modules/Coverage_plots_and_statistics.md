@@ -31,7 +31,7 @@ We already discussed BAM format in the session "NGS file formats and data and QC
 
 The specific viral sequence datasets that we will examine are:
  - [ERR8261957](https://www.ebi.ac.uk/ena/browser/view/ERR8261957) (Oxford Nanopore)
- - [ERR8261968](https://www.ebi.ac.uk/ena/browser/view/ERR8261968) (llumina MiSeq)
+ - [ERR8261968](https://www.ebi.ac.uk/ena/browser/view/ERR8261968) (Illumina MiSeq)
 
 These datasets are already downloaded and provided to you in the virtual machine. Now, navigate to the appropriate directory with this command:
 
