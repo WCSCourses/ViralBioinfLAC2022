@@ -85,39 +85,31 @@ Now let's align the samples to our reference genome using ``bwa mem``:
 >alignments, remove PCR duplicates, generate per-position information in
 >the pileup format.
 
->If you check your directory again, you should now see a file called
->**dengue-aln.sam**
+If you check your directory again, you should now see a file called **dengue-aln.sam**
 
->This is an example of a "SAM" file, which is the common output file type
->for deep sequencing reads. SAM files tend to take up a lot of space on
->your computer however so let's go ahead and convert this file to a "BAM"
->file, which is the compressed version. We will be using SAMtools to do
->this:
+This is an example of a **SAM** file, which is the common output file type
+for deep sequencing reads. SAM files tend to take up a lot of space on
+your computer however so let's go ahead and convert this file to a **BAM**
+file, which is the compressed version. We will be using ``samtools view`` to do
+this:
 
-  -----------------------------------------------------------------------
-  samtools view -bS dengue-aln.sam \> dengue-aln.bam
-  -----------------------------------------------------------------------
-
-  -----------------------------------------------------------------------
-
+``samtools view -bS dengue-aln.sam > dengue-aln.bam``
+  
 > In this command, we are telling **SAMtools** to **view** the file
 > **dengue-aln.sam** and direct (**\>**) the output into a file called
-> **dengue-aln.bam**. The **--bS** tells samtools that we want the
+> **dengue-aln.bam**. The **-bS** tells samtools that we want the
 > output in BAM format (**b**) and to auto-detect the format the input
 > data is in (**S**).
 
->To prepare our new .bam file for downstream use, we should now sort and
->index it using **SAMtools**:
+To prepare our new .bam file for downstream use, we should now sort and index it using again **SAMtools**:
 
------------------------------------------------------------------------
-samtools sort dengue-aln.bam -o dengue.bam
------------------------------------------------------------------------
-samtools index dengue.bam
------------------------------------------------------------------------
-rm dengue-aln.sam
------------------------------------------------------------------------
-rm dengue-aln.bam
------------------------------------------------------------------------
+``samtools sort dengue-aln.bam -o dengue.bam``
+
+``samtools index dengue.bam``
+
+``rm dengue-aln.sam``
+
+``rm dengue-aln.bam``
 
 > In this set of commands, we are using **SAMtools** to sort the BAM
 > file **dengue-aln.bam** and output (**-o**) a new file called
