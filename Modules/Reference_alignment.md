@@ -46,9 +46,9 @@ than 50bp in length
 >**\--paired** = the names of the paired fastq files to analyze in order
 (Read 1 then Read 2)
 
-## 7.4 Aligning your reads to a reference genome with BWA
+## Aligning your reads to a reference genome with BWA
 
-There are many tools available to align reads onto a reference sequence: BWA, Novoalign, bowtie2, STAR to name but a few. In this practical, we will be using **BWA** ([http://bio-bwa.sourceforge.net]).
+There are many tools available to align reads onto a reference sequence: BWA, Novoalign, bowtie2, STAR to name but a few. In this practical, we will be using **BWA** (http://bio-bwa.sourceforge.net).
 
 >BWA (Burrows--Wheeler aligner) is a commonly used software designed to
 >map sequence reads to a reference genome. BWA actually has three
