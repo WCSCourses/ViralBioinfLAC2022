@@ -57,15 +57,11 @@ There are many tools available to align reads onto a reference sequence: BWA, No
 >BWA-MEM, which is typically preferred for longer reads due to its speed
 >and accuracy.
 
->To get started, let's start by indexing the reference genome:
+To get started, let's start by indexing the reference genome:
 
-  -----------------------------------------------------------------------
-  bwa index dengue-genome.fa
-  -----------------------------------------------------------------------
-
-  -----------------------------------------------------------------------
-
->You should now have some additional files in your directory:
+``bwa index dengue-genome.fa``
+  
+You should now have some additional files in your directory:
 
 -rw-r----- 1 manager manager 10B Aug 1 17:03 dengue-genome.fa.amb
 
@@ -77,17 +73,11 @@ There are many tools available to align reads onto a reference sequence: BWA, No
 
 -rw-r----- 1 manager manager 5.3K Aug 1 17:03 dengue-genome.fa.sa
 
->Now let's align the samples to our reference genome using bwa mem.
->Alignment is just one single step with **bwa mem**:
+Now let's align the samples to our reference genome using ``bwa mem``:
 
-  -----------------------------------------------------------------------
-  bwa mem dengue-genome.fa dengue.read1.fq.gz dengue.read2.fq.gz \>
-  dengue-aln.sam
-  -----------------------------------------------------------------------
+``bwa mem dengue-genome.fa dengue.read1.fq.gz dengue.read2.fq.gz > dengue-aln.sam``
 
-  -----------------------------------------------------------------------
-
->*7.5 Manipulating your SAM file with SAMtools*
+## Manipulating your SAM file with SAMtools
 
 >SAMtools is a library and software package for parsing and manipulating
 >alignments in the SAM/BAM format. It is a multifunctional set of tools
