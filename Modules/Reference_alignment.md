@@ -251,6 +251,14 @@ You should see four files:
 
     chikv.read1.fq.gz
 
+1. Create a reference index
+2. Align the reads to the reference to create a SAM file
+3. Convert and sort the SAM file in to a BAM file
+4. Index the BAM file
+5. Delete the SAM file
+6. Count the number of mapped reads
+7. Count the number of unmapped read
+
 **Question 1: How many reads map to the Chikungunya genome?**
 
 **Question 2: What is the insert size average?**
