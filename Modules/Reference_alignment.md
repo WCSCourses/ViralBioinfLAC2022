@@ -103,9 +103,9 @@ this:
 
 To prepare our new .bam file for downstream use, we should now sort and index it using again **SAMtools**:
 
-``samtools sort dengue-aln.bam -o dengue.bam``
+``samtools sort dengue-aln.bam -o dengue-aln.sorted.bam``
 
-``samtools index dengue.bam``
+``samtools index dengue-aln.sorted.bam``
 
 ``rm dengue-aln.sam``
 
@@ -113,8 +113,8 @@ To prepare our new .bam file for downstream use, we should now sort and index it
 
 > In this set of commands, we are using **SAMtools** to sort the BAM
 > file **dengue-aln.bam** and output (**-o**) a new file called
-> **dengue.bam**. We are then using **samtools** to index the BAM file
-> **dengue.bam** - indexing enables faster searches downstream and
+> **dengue-aln.sorted.bam**. We are then using **samtools** to index the BAM file
+> **dengue-aln.sorted.bam** - indexing enables faster searches downstream and
 > requires the data to be sorted. Finally, since we no longer need our
 > original uncompressed SAM file and unsorted BAM file and we don\'t
 > want to tie up our server with unneeded files, we then use the **rm**
@@ -122,17 +122,19 @@ To prepare our new .bam file for downstream use, we should now sort and index it
 > unsorted **dengue-aln.bam** file. *Do be careful when using the **rm**
 > command though, once you delete a file this way it is gone forever!*
 
->There should now be two additional files in your directory:
->**dengue.bam** (the BAM file) and **dengue.bam.bai** (the BAM index
->file). To check this and to view the sizes of the files you can use:
------------------------------------------------------------------------
-ls -lh
------------------------------------------------------------------------
+There should now be two additional files in your directory: 
+- **dengue-aln.sorted.bam** (the BAM file) 
+- **dengue-aln.sorted.bam.bai** (the BAM index file). 
+
+To check this and to view the sizes of the files you can use:
+
+``ls -lh``
+
 > The **-l** modifier of this command will list your files in the long
 > list format while the **-h** modifier will output the file sizes in a
 > human readable format.
 
->The output of this command should look something like this:
+The output of this command should look something like this:
 
 -rw-r\-\-\-\-- 1 manager manager 18B Aug 1 18:28 annotation.txt
 
@@ -150,56 +152,63 @@ ls -lh
 
 -rw-r\-\-\-\-- 1 manager manager 5.3K Aug 1 17:03 dengue-genome.fa.sa
 
--rw-r\-\-\-\-- 1 manager manager 424M Aug 1 17:22 dengue.bam
+-rw-r\-\-\-\-- 1 manager manager 424M Aug 1 17:22 dengue-aln.sorted.bam
 
--rw-r\-\-\-\-- 1 manager manager 96B Aug 1 17:23 dengue.bam.bai
+-rw-r\-\-\-\-- 1 manager manager 96B Aug 1 17:23 dengue-aln.sorted.bam.bai
 
 -rw-r\-\-\-\-- 1 manager manager 289M Aug 1 16:55 dengue.read1.fq.gz
 
 -rw-r\-\-\-\-- 1 manager manager 311M Aug 1 16:56 dengue.read2.fq.gz
 
->One common thing to check is how many reads have aligned to the
->reference, and how many did not. Samtools can report this for us easily:
+**Question: How big is the SAM file compared to the BAM file?**
 
->**Number of mapped reads**:
------------------------------------------------------------------------
-samtools view -c -F4 dengue.bam
------------------------------------------------------------------------
+> If your SAM file is 0B (i.e. 0 bytes = empty) then something went wrong with the BWA
+> alignment step, so restart from there. If you SAM file is fine (i.e. >0), but your BAM file is 0B
+> (i.e. empty), then something went wrong with your SAM to BAM conversion so re-do that section.
 
->An explanation of this command is as follows:
+One common thing to check is how many reads have aligned to the reference, and how many did not. 
 
->-   samtools view to view the file dengue.bam
+> Reminder: the 2nd column in the SAM file contains the flag for the read alignment. If the flag
+> includes the number 4 flag in its makeup then the read is unmapped, if it doesn’t include the
+> number 4 then it is mapped
 
->-   --c = count the read alignments
+Samtools can report this for us easily:
 
->-   --F4 = skip read alignments that have the unmapped Flag 4
+**Number of mapped reads:**
 
->**Number of unmapped reads**:
------------------------------------------------------------------------
-samtools view -c -f4 dengue.bam
------------------------------------------------------------------------
+``samtools view -c -F4 dengue-aln.sorted.bam``
 
->This time we use --f4 = only include read alignments that do have the
+An explanation of this command is as follows:
+
+>-   ``samtools view`` to view the file dengue-aln.sorted.bam
+
+>-   -c = count the read alignments
+
+>-   -F4 = skip read alignments that have the unmapped Flag 4
+
+**Number of unmapped reads:**
+
+``samtools view -c -f4 dengue-aln.sorted.bam``
+
+>This time we use -f4 = only include read alignments that do have the
 >unmapped flag 4
+
+**Question: how many reads are mapped to the dengue-genome.fa genome?**
+
+**Question: how many reads are unmapped?**
 
 >If your results show that you have **5,178,553 mapped** reads and
 >**1,740,506 unmapped** reads, you are doing great!
 
->Another way you can get these data is to use:
+Another way you can get these data is to use:
 
------------------------------------------------------------------------
-samtools idxstats dengue.bam
------------------------------------------------------------------------
+``samtools idxstats dengue-aln.sorted.bam``
 
->This should give you the mapped and unmapped data with a single command.
+This should give you the mapped and unmapped data with a single command.
 
->Finally, we can also dig deeper into the data to look at insert size
->length, number of mutations and overall coverage by creating a stats
->file:
+Finally, we can also dig deeper into the data to look at insert size length, number of mutations and overall coverage by creating a stats file:
 
------------------------------------------------------------------------
-samtools stats dengue.bam \> dengue_stats.txt
------------------------------------------------------------------------
+``samtools stats dengue-aln.sorted.bam > dengue_stats.txt``
 
 >The first section of this file is a summary of the aligned data set
 >which can give you an idea of the quality of your data set and overall
@@ -224,26 +233,23 @@ SN insert size average: 241.1
 
 SN insert size standard deviation: 70.9
 
->*7.6 Group practical*
+## Group practical
 
->Now let's take what you've learned and try it out on another dataset! In
->this example, we will be mapping reads to a Chikungunya virus genome.
+Now let's take what you've learned and try it out on another dataset! In this example, we will be mapping reads to a Chikungunya virus genome.
 
->To start, navigate to:
+To start, navigate to:
 
------------------------------------------------------------------------
-cd /home/manager/course_data/Reference_alignment/07-chikv-align/
------------------------------------------------------------------------
+``cd /home/manager/course_data/Reference_alignment/07-chikv-align/``
 
->You should see four files:
+You should see four files:
 
->annotation.txt
+    annotation.txt
 
->chikv-genome.fasta
+    chikv-genome.fasta
 
->chikv.read2.fq.gz
+    chikv.read2.fq.gz
 
->chikv.read1.fq.gz
+    chikv.read1.fq.gz
 
 **Question 1: How many reads map to the Chikungunya genome?**
 
