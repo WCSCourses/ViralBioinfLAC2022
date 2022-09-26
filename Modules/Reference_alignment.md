@@ -113,7 +113,7 @@ To prepare our new .bam file for downstream use, we should now sort and index it
 
 > In this set of commands, we are using **SAMtools** to sort the BAM
 > file **dengue-aln.bam** and output (**-o**) a new file called
-> **dengue-aln.sorted.bam**. We are then using **samtools** to index the BAM file
+> **dengue-aln.sorted.bam**. We are then using **SAMtools** to index the BAM file
 > **dengue-aln.sorted.bam** - indexing enables faster searches downstream and
 > requires the data to be sorted. Finally, since we no longer need our
 > original uncompressed SAM file and unsorted BAM file and we don\'t
@@ -256,9 +256,9 @@ You should see four files:
 3. Convert and sort the SAM file in to a BAM file
 4. Index the BAM file
 5. Delete the SAM file
-6. Count the number of mapped reads
-7. Count the number of unmapped read
 
 **Question 1: How many reads map to the Chikungunya genome?**
 
-**Question 2: What is the insert size average?**
+**Question 2: What´s the number of unmapped reads?**
+
+**Question 3: What is the insert size average?**
