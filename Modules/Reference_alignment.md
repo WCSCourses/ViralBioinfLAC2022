@@ -211,7 +211,7 @@ This should give you the mapped and unmapped data with a single command. ``samto
 
 MN566112.1	  10722	      5178553	        132806
 
-/*	            0	          0	              1607700
+\*	            0	          0	              1607700
 
 Finally, we can also dig deeper into the data to look at insert size length, number of mutations and overall coverage by creating a stats file:
 
