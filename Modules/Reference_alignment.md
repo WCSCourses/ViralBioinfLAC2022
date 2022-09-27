@@ -46,6 +46,12 @@ than 50bp in length
 >**\--paired** = the names of the paired fastq files to analyze in order
 (Read 1 then Read 2)
 
+Let´s change the names of our new trimmed dataset:
+
+``mv dengue.read1_val_1.fq.gz dengue_R1.fq.gz``
+
+``mv dengue.read2_val_2.fq.gz dengue_R2.fq.gz``
+
 ## Aligning your reads to a reference genome with BWA
 
 There are many tools available to align reads onto a reference sequence: BWA, Novoalign, bowtie2, STAR to name but a few. In this practical, we will be using **BWA** (http://bio-bwa.sourceforge.net).
@@ -75,7 +81,7 @@ You should now have some additional files in your directory:
 
 Now let's align the samples to our reference genome using ``bwa mem``:
 
-``bwa mem dengue-genome.fa dengue.read1.fq.gz dengue.read2.fq.gz > dengue-aln.sam``
+``bwa mem dengue-genome.fa dengue_R1.fq.gz dengue_R2.fq.gz > dengue-aln.sam``
 
 ## Manipulating your SAM file with SAMtools
 
@@ -152,17 +158,22 @@ The output of this command should look something like this:
 
 -rw-r\-\-\-\-- 1 manager manager 11K Aug 1 17:03 dengue-genome.fa.bwt
 
--rw-r\-\-\-\-- 1 manager manager 2.6K Aug 1 17:03 dengue-genome.fa.pac
+-rw-r\-\-\-\-- 1 manager manager 2.7K Aug 1 17:03 dengue-genome.fa.pac
 
 -rw-r\-\-\-\-- 1 manager manager 5.3K Aug 1 17:03 dengue-genome.fa.sa
 
--rw-r\-\-\-\-- 1 manager manager 424M Aug 1 17:22 dengue-aln.sorted.bam
+-rw-r\-\-\-\-- 1 manager manager 289M Aug 1 17:22 dengue-aln.sorted.bam
 
 -rw-r\-\-\-\-- 1 manager manager 96B Aug 1 17:23 dengue-aln.sorted.bam.bai
 
 -rw-r\-\-\-\-- 1 manager manager 289M Aug 1 16:55 dengue.read1.fq.gz
 
 -rw-r\-\-\-\-- 1 manager manager 311M Aug 1 16:56 dengue.read2.fq.gz
+
+-rw-r\-\-\-\-- 1 manager manager 153M Aug 1 16:59 dengue_R1.fq.gz
+
+-rw-r\-\-\-\-- 1 manager manager 171M Aug 1 17:00 dengue_R2.fq.gz
+
 
 One common thing to check is how many reads have aligned to the reference, and how many did not. 
 
@@ -195,8 +206,8 @@ An explanation of this command is as follows:
 
 **Question: how many reads are unmapped?**
 
->If your results show that you have **5,178,553 mapped** reads and
->**1,740,506 unmapped** reads, you are doing great!
+>If your results show that you have **5,009,395 mapped** reads and
+>**58,129 unmapped** reads, you are doing great!
 
 Another way you can get these data is to use:
 
@@ -209,9 +220,9 @@ This should give you the mapped and unmapped data with a single command. ``samto
 
 **RefName** **RefLen**	**MappedReads**	**UnmappedReads**
 
-MN566112.1	  10722	      5178553	        132806
+MN566112.1	  10722	      5009395	        21432
 
-\*	            0	          0	              1607700
+\*	            0	          0	            36688
 
 Therefore, the total unmapped reads is the sum of the UnmappedReads column – this will correspond to the value reported when using the -f4 flag.
 
@@ -224,23 +235,23 @@ Finally, we can also dig deeper into the data to look at insert size length, num
 >alignment. If you open the file you just made, you should be able to
 >look through and find these numbers (among other things!):
 
-SN raw total sequences: 6910050
+SN raw total sequences: 5059052
 
-SN last fragments: 3455025
+SN last fragments: 2529526
 
-SN reads mapped: 5169544
+SN reads mapped: 5000932
 
-SN reads mapped and paired: 5036738
+SN reads mapped and paired: 4979500
 
-SN average length: 150
+SN average length: 147
 
 SN maximum length: 150
 
-SN average quality: 35.1
+SN average quality: 38.0
 
-SN insert size average: 235.9
+SN insert size average: 236.3
 
-SN insert size standard deviation: 73.2
+SN insert size standard deviation: 72.8
 
 ## Group practical
 
