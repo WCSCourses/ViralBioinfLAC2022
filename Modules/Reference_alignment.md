@@ -236,9 +236,9 @@ SN maximum length: 150
 
 SN average quality: 35.1
 
-SN insert size average: 241.1
+SN insert size average: 235.9
 
-SN insert size standard deviation: 70.9
+SN insert size standard deviation: 73.2
 
 ## Group practical
 
