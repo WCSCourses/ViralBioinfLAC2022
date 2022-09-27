@@ -1,56 +1,37 @@
 # Consensus and variant calling
-*9.1 Overview*
+## Overview
 
 ![Consensus-image1.png](https://github.com/WCSCourses/ViralBioinfAsia2022/blob/main/Modules/images/Consensus-image1.png)
 
->*9.2 Creating a consensus with BCFtools*
+## Creating a consensus with BCFtools
 
->Let's start by preparing the folder and files we will be working with.  **Note**: To make this run much faster on your laptops, we are going to be subsampling the .bam file you created in the 'Reference_alignment' module.  When generating a consensus sequence on real data, I would strongly recommend using the full .bam file as the result may be more accurate.  Here are the scripts you can copy and paste into your terminal:
+Let's start by preparing the folder and files we will be working with:  
 
------------------------------------------------------------------------
-mkdir /home/manager/course_data/Consensus_and_variant_calling/dengue-corrected
------------------------------------------------------------------------
-cp /home/manager/course_data/Reference_alignment/07-dengue_align/annotation.txt /home/manager/course_data/Consensus_and_variant_calling/dengue-corrected/
------------------------------------------------------------------------
-cp /home/manager/course_data/Reference_alignment/07-dengue_align/dengue-genome.fa /home/manager/course_data/Consensus_and_variant_calling/dengue-corrected/
------------------------------------------------------------------------
-samtools view -s 0.01 -b /home/manager/course_data/Reference_alignment/07-dengue_align/dengue.bam > /home/manager/course_data/Consensus_and_variant_calling/dengue-corrected/dengue-subsample_01p-aln.bam
------------------------------------------------------------------------
-samtools sort /home/manager/course_data/Consensus_and_variant_calling/dengue-corrected/dengue-subsample_01p-aln.bam -o /home/manager/course_data/Consensus_and_variant_calling/dengue-corrected/dengue-subsample_01p.bam 
------------------------------------------------------------------------
-samtools index /home/manager/course_data/Consensus_and_variant_calling/dengue-corrected/dengue-subsample_01p.bam
------------------------------------------------------------------------
-rm /home/manager/course_data/Consensus_and_variant_calling/dengue-corrected/dengue-subsample_01p-aln.bam 
------------------------------------------------------------------------
+``cd /home/manager/course_data/Consensus_and_variant_calling/dengue-corrected``
 
->Finally, one of the programs we are going to use isn't installed so let's do that now:
+``cp /home/manager/course_data/Reference_alignment/07-dengue_align/annotation.txt .``
 
------------------------------------------------------------------------
-sudo apt install bcftools
------------------------------------------------------------------------
+``cp /home/manager/course_data/Reference_alignment/07-dengue_align/dengue-genome.fa .``
 
->You'll be using the 'sudo' (super user) command to install this so your system will ask you for a password.  Type in your login (which should be 'manager')
+``samtools view -s 0.01 -b /home/manager/course_data/Reference_alignment/07-dengue_align/dengue-aln.bam > dengue-subsample.bam``
 
->Ok, all the prep work is done!  Now let's navigate to the proper folder so we can get started:
+``samtools sort dengue-subsample.bam -o dengue-subsample.sorted.bam``
 
------------------------------------------------------------------------
-cd /home/manager/course_data/Consensus_and_variant_calling/dengue-corrected/
------------------------------------------------------------------------
+``samtools index dengue-subsample.sorted.bam``
 
->Now that we have our alignment file, we can now generate a consensus
->sequence. We will explore two separate ways to generate this consensus.
->In the first example we will use **bcftools mpileup** and **bcftools
->call** to generate a "majority rules" consensus and the output format
->will be in **.fasta** file format. For many downstream applications this
->will be the output you will likely want. In the second example, we will
->also be using use **bcftools mpileup** and **bcftools call** but will
->also add in the **vcfutils.pl vcf2fq** script to generate a **.fastq**
->file that allows for ambiguities at each position if there is a mixture
->of variants present in the sample.
+``rm dengue-subsample.bam`` 
 
->Example 1 - Using **bcftools** to generate a **.fasta** "majority rules" consensus file
+>**Note**: To make this run much faster on your laptops, we are going to be subsampling the .bam file you created in the 'Reference_alignment' module. When generating >a consensus sequence on real data, we would strongly recommend using the full .bam file as the result may be more accurate. 
 
->We will be using the following options for bcftools mpileup and bcftools call respectively:
+Ok, all the prep work is done!  
+
+Now that we have our alignment file, we can now generate a consensus sequence. We will explore two separate ways to generate this consensus:
+1. We will use ``bcftools mpileup`` and ``bcftools call`` to generate a "majority rules" consensus and the output format will be in **.fasta** file format. For many downstream applications this will be the output you will likely want. 
+2. We will also be using use ``bcftools mpileup`` and ``bcftools call`` but will also add in the **vcfutils.pl vcf2fq** script to generate a **.fastq** file that allows for ambiguities at each position if there is a mixture of variants present in the sample.
+
+### Example 1 - Using **bcftools** to generate a **.fasta** "majority rules" consensus file
+
+We will be using the following options for bcftools mpileup and bcftools call respectively:
 
 >**bcfools mpileup**
 
@@ -63,7 +44,7 @@ cd /home/manager/course_data/Consensus_and_variant_calling/dengue-corrected/
 
 >-v, --variants-only output variant sites only
 
->Here is how we will call this command:
+Here is how we will call this command:
 
 -----------------------------------------------------------------------
 samtools faidx dengue-genome.fa
