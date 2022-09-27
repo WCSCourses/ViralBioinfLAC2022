@@ -48,32 +48,19 @@ Finally, we will use a quick hack to rename the header of the .fa file we just g
 
 ``sed 's/>MN566112.1 Dengue virus 2 isolate New Caledonia-2018-AVS127, complete genome/>dengue-consensus-bcftools/' dengue-cns.fa > dengue-consensus-bcftools.fa``
 
-rm calls*
------------------------------------------------------------------------
-rm dengue-cns.fa
------------------------------------------------------------------------
+``rm calls*``
 
->We created (and removed) several files here. The one that contains the consensus genome you are looking for is **dengue-consensus-bcftools.fa**
+``rm dengue-cns.fa``
 
->Example 2 - Using **samtools/bcftools** along with vcfutils.pl vcf2fq to generate a **.fastq** consensus file that allows for ambiquities
+We created (and removed) several files here. The one that contains the consensus genome you are looking for is **dengue-consensus-bcftools.fa**
 
->Here we will be using the following options for samtools mpileup and bcftools call respectively:
-
->**bcftools mpileup**
-
->-f, \--fasta-ref FILE faidx indexed reference sequence file
-
->**bcftools call**
-
->-c, \--consensus-caller the original calling method (conflicts with -m)
+### Example 2 - Using **samtools/bcftools** along with vcfutils.pl vcf2fq to generate a **.fastq** consensus file that allows for ambiguities
 
 >Here\'s how we will call this command:
 
------------------------------------------------------------------------
-bcftools mpileup -f dengue-genome.fa dengue-subsample_01p.bam | bcftools call -c --ploidy-file annotation.txt | vcfutils.pl vcf2fq > dengue-consensus-full.fq
------------------------------------------------------------------------
+``bcftools mpileup -f dengue-genome.fa dengue-subsample.sorted.bam | bcftools call -c --ploidy-file annotation.txt | vcfutils.pl vcf2fq > dengue-consensus-full.fq``
 
->Finally, we will again use a quick hack to rename the header of your output file:
+Finally, we will again use a quick hack to rename the header of your output file:
 
 -----------------------------------------------------------------------
 sed 's/@MN566112.1/>dengue-consensus-vcf2fq/' dengue-consensus-full.fq > dengue-consensus-vcf2fq.fq 
