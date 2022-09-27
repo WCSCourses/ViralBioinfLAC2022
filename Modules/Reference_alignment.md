@@ -213,6 +213,8 @@ MN566112.1	  10722	      5178553	        132806
 
 \*	            0	          0	              1607700
 
+Therefore, the total unmapped reads is the sum of the UnmappedReads column – this will correspond to the value reported when using the -f4 flag.
+
 Finally, we can also dig deeper into the data to look at insert size length, number of mutations and overall coverage by creating a stats file:
 
 ``samtools stats dengue-aln.sorted.bam > dengue_stats.txt``
