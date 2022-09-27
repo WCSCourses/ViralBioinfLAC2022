@@ -31,20 +31,8 @@ Now that we have our alignment file, we can generate a consensus sequence. We wi
 
 ### Example 1 - Using **bcftools** to generate a **.fasta** "majority rules" consensus file
 
-We will be using the following options for bcftools mpileup and bcftools call respectively:
+>You can check the arguments we will be using for the different commands of bcftools by typing in the command line "``bcftools mpileup``" or "``bcftools call``", for example.
 
->**bcfools mpileup**
-
->-f, --fasta-ref FILE faidx indexed reference sequence file
-
->**bcftools call**
-
->-m, --multiallelic-caller alternative model for multiallelic and
->rare-variant calling (conflicts with -c)
-
->-v, --variants-only output variant sites only
-
-Here is how we will call this command:
 
 -----------------------------------------------------------------------
 samtools faidx dengue-genome.fa
