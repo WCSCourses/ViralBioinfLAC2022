@@ -152,8 +152,6 @@ The output of this command should look something like this:
 
 -rw-r\-\-\-\-- 1 manager manager 11K Aug 1 17:03 dengue-genome.fa.bwt
 
--rw-r\-\-\-\-- 1 manager manager 26B Aug 1 19:27 dengue-genome.fa.fai
-
 -rw-r\-\-\-\-- 1 manager manager 2.6K Aug 1 17:03 dengue-genome.fa.pac
 
 -rw-r\-\-\-\-- 1 manager manager 5.3K Aug 1 17:03 dengue-genome.fa.sa
