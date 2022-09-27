@@ -101,6 +101,12 @@ this:
 > output in BAM format (**b**) and to auto-detect the format the input
 > data is in (**S**).
 
+**Question: How big is the SAM file compared to the BAM file?**
+
+> If your SAM file is 0B (i.e. 0 bytes = empty) then something went wrong with the BWA
+> alignment step, so restart from there. If you SAM file is fine (i.e. >0), but your BAM file is 0B
+> (i.e. empty), then something went wrong with your SAM to BAM conversion so re-do that section.
+
 To prepare our new .bam file for downstream use, we should now sort and index it using again **SAMtools**:
 
 ``samtools sort dengue-aln.bam -o dengue-aln.sorted.bam``
@@ -126,7 +132,7 @@ There should now be two additional files in your directory:
 - **dengue-aln.sorted.bam** (the BAM file) 
 - **dengue-aln.sorted.bam.bai** (the BAM index file). 
 
-To check this and to view the sizes of the files you can use:
+To check this you can use:
 
 ``ls -lh``
 
@@ -159,12 +165,6 @@ The output of this command should look something like this:
 -rw-r\-\-\-\-- 1 manager manager 289M Aug 1 16:55 dengue.read1.fq.gz
 
 -rw-r\-\-\-\-- 1 manager manager 311M Aug 1 16:56 dengue.read2.fq.gz
-
-**Question: How big is the SAM file compared to the BAM file?**
-
-> If your SAM file is 0B (i.e. 0 bytes = empty) then something went wrong with the BWA
-> alignment step, so restart from there. If you SAM file is fine (i.e. >0), but your BAM file is 0B
-> (i.e. empty), then something went wrong with your SAM to BAM conversion so re-do that section.
 
 One common thing to check is how many reads have aligned to the reference, and how many did not. 
 
