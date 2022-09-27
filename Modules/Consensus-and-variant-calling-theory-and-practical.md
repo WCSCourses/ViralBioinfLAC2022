@@ -26,6 +26,7 @@ Let's start by preparing the folder and files we will be working with:
 Ok, all the prep work is done!  
 
 Now that we have our alignment file, we can generate a consensus sequence. We will explore two separate ways to generate this consensus:
+
 1. We will use ``bcftools mpileup`` and ``bcftools call`` to generate a "majority rules" consensus and the output format will be in **.fasta** file format. For many downstream applications this will be the output you will likely want. 
 2. We will also be using use ``bcftools mpileup`` and ``bcftools call`` but will also add in the **vcfutils.pl vcf2fq** script to generate a **.fastq** file that allows for ambiguities at each position if there is a mixture of variants present in the sample.
 
@@ -33,23 +34,20 @@ Now that we have our alignment file, we can generate a consensus sequence. We wi
 
 >You can check the arguments we will be using for the different commands of bcftools by typing in the command line "``bcftools mpileup``" or "``bcftools call``", for example.
 
+Let´s index our reference:
 
------------------------------------------------------------------------
-samtools faidx dengue-genome.fa
------------------------------------------------------------------------
-bcftools mpileup -f dengue-genome.fa dengue-subsample_01p.bam | bcftools call -mv -Oz --ploidy-file annotation.txt -o calls.vcf.gz
------------------------------------------------------------------------
-tabix calls.vcf.gz
------------------------------------------------------------------------
-cat dengue-genome.fa | bcftools consensus calls.vcf.gz > dengue-cns.fa
------------------------------------------------------------------------
+``samtools faidx dengue-genome.fa``
 
+``bcftools mpileup -f dengue-genome.fa dengue-subsample_01p.bam | bcftools call -mv -Oz --ploidy-file annotation.txt -o calls.vcf.gz``
 
->Finally, we will use a quick hack to rename the header of the .fasta file we just generated:
+``tabix calls.vcf.gz``
 
------------------------------------------------------------------------
-sed 's/>MN566112.1 Dengue virus 2 isolate New Caledonia-2018-AVS127, complete genome/>dengue-consensus-bcftools/' dengue-cns.fa > dengue-consensus-bcftools.fa
------------------------------------------------------------------------
+``cat dengue-genome.fa | bcftools consensus calls.vcf.gz > dengue-cns.fa``
+
+Finally, we will use a quick hack to rename the header of the .fa file we just generated:
+
+``sed 's/>MN566112.1 Dengue virus 2 isolate New Caledonia-2018-AVS127, complete genome/>dengue-consensus-bcftools/' dengue-cns.fa > dengue-consensus-bcftools.fa``
+
 rm calls*
 -----------------------------------------------------------------------
 rm dengue-cns.fa
