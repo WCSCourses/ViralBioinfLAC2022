@@ -208,8 +208,10 @@ This should give you the mapped and unmapped data with a single command. ``samto
 2. Those that are unmapped AND whose pair is also unmapped - these are reported in the UnmappedReads column (4th column) of the no reference sequence line (*).
 
 **RefName** **RefLen**	**MappedReads**	**UnmappedReads**
+
 MN566112.1	  10722	      5178553	        132806
-*	            0	          0	              1607700
+
+/*	            0	          0	              1607700
 
 Finally, we can also dig deeper into the data to look at insert size length, number of mutations and overall coverage by creating a stats file:
 
