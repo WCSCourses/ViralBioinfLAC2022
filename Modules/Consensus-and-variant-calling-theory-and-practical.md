@@ -21,11 +21,11 @@ Let's start by preparing the folder and files we will be working with:
 
 ``rm dengue-subsample.bam`` 
 
->**Note**: To make this run much faster on your laptops, we are going to be subsampling the .bam file you created in the 'Reference_alignment' module. When generating >a consensus sequence on real data, we would strongly recommend using the full .bam file as the result may be more accurate. 
+>**Note**: To make this run much faster on your laptops, we are going to be subsampling the .bam file you created in the 'Reference_alignment' module. When generating a consensus sequence on real data, we would strongly recommend using the full .bam file as the result may be more accurate. 
 
 Ok, all the prep work is done!  
 
-Now that we have our alignment file, we can now generate a consensus sequence. We will explore two separate ways to generate this consensus:
+Now that we have our alignment file, we can generate a consensus sequence. We will explore two separate ways to generate this consensus:
 1. We will use ``bcftools mpileup`` and ``bcftools call`` to generate a "majority rules" consensus and the output format will be in **.fasta** file format. For many downstream applications this will be the output you will likely want. 
 2. We will also be using use ``bcftools mpileup`` and ``bcftools call`` but will also add in the **vcfutils.pl vcf2fq** script to generate a **.fastq** file that allows for ambiguities at each position if there is a mixture of variants present in the sample.
 
