@@ -104,7 +104,7 @@ this:
 **Question: How big is the SAM file compared to the BAM file?**
 
 > If your SAM file is 0B (i.e. 0 bytes = empty) then something went wrong with the BWA
-> alignment step, so restart from there. If you SAM file is fine (i.e. >0), but your BAM file is 0B
+> alignment step, so restart from there. If your SAM file is fine (i.e. >0), but your BAM file is 0B
 > (i.e. empty), then something went wrong with your SAM to BAM conversion so re-do that section.
 
 To prepare our new .bam file for downstream use, we should now sort and index it using again **SAMtools**:
