@@ -260,11 +260,12 @@ You should see four files:
 
     chikv.read1.fq.gz
 
-1. Create a reference index
-2. Align the reads to the reference to create a SAM file
-3. Convert and sort the SAM file in to a BAM file
-4. Index the BAM file
-5. Delete the SAM file
+1. Trim the reads
+2. Create a reference index
+3. Align the reads you trimmed to the reference to create a SAM file
+4. Convert and sort the SAM file in to a BAM file
+5. Index the BAM file
+6. Delete the SAM file
 
 **Question 1: How many reads map to the Chikungunya genome?**
 
