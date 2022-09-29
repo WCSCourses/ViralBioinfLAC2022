@@ -88,89 +88,106 @@ LoFreq comes with a variety of subcommands. By just typing ``lofreq`` you will g
 
 ### Running LoFreq
 
-Now let's see what ``lofreq call`` can do. For this tutorial, we will be using the standard presets for lofreq but when running this on your own datasets, I would encourage you to explore all the options available in lofreq by checking out the [github page](https://github.com/andreas-wilm/lofreq3).
-
------------------------------------------------------------------------
-lofreq call -b dengue-subsample.sorted.bam -f dengue-genome.fa > dengue-variants-original-ref.vcf
------------------------------------------------------------------------
-
->This will take a few minutes to run depending on your system, but you should soon see a new file in your directory called: **dengue-variants-original-ref.vcf**
-
->If you open this file with the **less** command, you should see that we have a large number of 'consensus variants' (i.e. variants with frequencies greater than 50%).  This means that the reference we used here was not ideal.  We can get better results if we re-map the reads to the new consensus genome we derived above (dengue-consensus-bcftools.fa) and then re-run lofreq:
-
------------------------------------------------------------------------
-bwa index dengue-consensus-bcftools.fa
------------------------------------------------------------------------
-bwa mem dengue-consensus-bcftools.fa /home/manager/course_data/Reference_alignment/07-dengue_align/dengue.read1.fq.gz /home/manager/course_data/Reference_alignment/07-dengue_align/dengue.read2.fq.gz > dengue-consensus-aln.sam
------------------------------------------------------------------------
-samtools view -bS dengue-consensus-aln.sam > dengue-consensus-aln.bam
------------------------------------------------------------------------
-samtools sort dengue-consensus-aln.bam -o dengue-consensus.bam
------------------------------------------------------------------------
-samtools index dengue-consensus.bam
------------------------------------------------------------------------
-rm dengue-consensus-aln*
------------------------------------------------------------------------
-samtools view -c -F4 dengue-consensus.bam
------------------------------------------------------------------------
-
->This final command should show that you have 5191658 reads mapped.  Normally, I would suggest proceeding with your **lofreq** run from this point.  In order to speed things up for the course, we are going to subsample our .bam file before we run lowfreq again: 
-
------------------------------------------------------------------------
-samtools view -s 0.01 -b dengue-consensus.bam > dengue-consensus-subsample_01p-aln.bam
------------------------------------------------------------------------
-samtools sort dengue-consensus-subsample_01p-aln.bam -o dengue-consensus-subsample_01p.bam
------------------------------------------------------------------------
-samtools index dengue-consensus-subsample_01p.bam
------------------------------------------------------------------------
-rm dengue-consensus-subsample_01p-aln.bam
------------------------------------------------------------------------
-samtools view -c -F4 dengue-consensus-subsample_01p.bam
------------------------------------------------------------------------
-
->As you can see from this final command, we now have 51539 reads mapped - not ideal in a normal situation, but good enough for illustrative purposes. 
-
->Let's start by building an index for our new consensus reference genome:
-
------------------------------------------------------------------------
-samtools faidx dengue-consensus-bcftools.fa
------------------------------------------------------------------------
-lofreq call -b dengue-consensus-subsample_01p.bam -f dengue-consensus-bcftools.fa > dengue-variants-consensus-ref.vcf
------------------------------------------------------------------------
-
->This will take a few minutes to run depending on your system, but you should soon see a new file in your directory called: **dengue-variants-consensus-ref.vcf**
-
->Done!
-
-*9.5 Practice*
-
->Now let's take what you've learned and try it out on another dataset! In this example, we will be looking for variants from a Chikungunya virus alignment.
-
->To start, let's repeat the first set of instructions from above to prepare a new folder:
-
------------------------------------------------------------------------
-mkdir /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected
------------------------------------------------------------------------
-cp /home/manager/course_data/Reference_alignment/07-chikv-align/annotation.txt /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected/
------------------------------------------------------------------------
-cp /home/manager/course_data/Reference_alignment/07-chikv-align/chikv-genome.fasta /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected/
------------------------------------------------------------------------
-samtools view -s 0.01 -b /home/manager/course_data/Reference_alignment/07-chikv-align/chikv.bam > /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected/chikv-subsample_01p-aln.bam
------------------------------------------------------------------------
-samtools sort /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected/chikv-subsample_01p-aln.bam -o /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected/chikv-subsample_01p.bam 
------------------------------------------------------------------------
-samtools index /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected/chikv-subsample_01p.bam
------------------------------------------------------------------------
-rm /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected/chikv-subsample_01p-aln.bam 
------------------------------------------------------------------------
-cd /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected/
------------------------------------------------------------------------
+Now let's see what ``lofreq call`` can do. For this tutorial, we will be using the standard presets for lofreq but when running this on your own datasets, I would encourage you to explore all the options available in lofreq by checking out the [github page](https://github.com/CSB5/lofreq).
 
 
->From here you should be able to follow the steps above to answer the questions below:
+``lofreq call -b dengue-subsample.sorted.bam -f dengue-genome.fa > dengue-variants-original-ref.vcf`` **NOT WORKING**
 
-**Question 1: How many mapped reads do you have in the 1% subsampled 'chikv-consensus-subsample_01p.bam' file?**
+``lofreq call -f dengue-genome.fa -o dengue.vcf dengue-subsample.sorted.bam``
+
+      The outputted VCF file consists of the following fields:
+      - CHROM: the chromosome – in this case the SARS2 ref sequence NC_045512.2
+      -POS: the position on the chromosome the variant is at
+      - ID: a ‘.’ but LoFreq can be run with a database of known variants to annotate this field
+      - REF: the reference base at this position
+      - ALT: the alternate base (the mutated base) at this position
+      - QUAL: LoFreq’s quality score for the variant
+      - FILTER: whether it passed LoFreq’s filters e.g. PASS
+      - INFO: Detailed Information
+        - DP=1248; depth = 1248
+        - AF=0.995192; Alt Frequency (Mutation Frequency) = 99.5%
+        - SB=0; Strand Bias test p-value
+        - DP4=0,1,604,638: Coverage of the ref base in Fwd and Rev, and the alt base in Fwd and Rev
+
+This will take a few minutes to run depending on your system, but you should soon see a new file in your directory called: **dengue.vcf**
+
+**Question1 – the consensus level mutations should be readily apparent (with frequencies near 100%) – is there any sub-consensus variants called by LoFreq?**
+
+>Hint: You can open this file with the ``more`` command to answer this question. What do you think about the reference used?
+
+Let´s re-map the reads to the new consensus genome we derived above (dengue-consensus-bcftools.fa) and then re-run lofreq:
+
+``bwa index dengue-consensus-bcftools.fa``
+
+``bwa mem dengue-consensus-bcftools.fa /home/manager/course_data/Reference_alignment/07-dengue_align/dengue_R1.fq.gz /home/manager/course_data/Reference_alignment/07-dengue_align/dengue_R2.fq.gz > dengue-consensus-aln.sam``
+
+``samtools view -bS dengue-consensus-aln.sam > dengue-consensus-aln.bam``
+
+``samtools sort dengue-consensus-aln.bam -o dengue-consensus.sorted.bam``
+
+``samtools index dengue-consensus.sorted.bam``
+
+``rm dengue-consensus-aln*``
+
+**Question2 – how many reads mapped to the reference sequence?**
+
+
+As we mentioned previously, we would proceed with the **lofreq** run from this point, but in order to speed things up for the course, we are going to subsample our .bam file before we run lowfreq again:
+
+
+``samtools view -s 0.01 -b dengue-consensus.sorted.bam > dengue-cons-subsample.bam``
+
+``samtools sort dengue-cons-subsample.bam -o dengue-cons-subsample.sorted.bam``
+
+``samtools index dengue-cons-subsample.sorted.bam``
+
+``rm dengue-cons-subsample.sorted.bam``
+
+``samtools view -c -F4 dengue-cons-subsample.sorted.bam``
+
+>As you can see from this final command, we now have 49829 reads mapped - not ideal in a normal situation, but good enough for illustrative purposes. 
+
+Let's continue by building an index for our new consensus reference genome:
+
+``samtools faidx dengue-consensus-bcftools.fa``
+
+``lofreq call -f dengue-consensus-bcftools.fa -o dengue-cons.vcf dengue-cons-subsample.sorted.bam``
+
+This will take a few minutes to run depending on your system, but you should soon see a new file in your directory called: **dengue-cons.vcf**
+
+**Question3: how many variants has lofreq detected?**
+
+**Question4: what type of variants are they?**
+
+**Question5: discuss these results considering the reference sequences used in both cases**
+
+
+## Practice
+
+Now let's take what you've learnt and try it out on another dataset! In this example, we will be looking for variants from a Chikungunya virus alignment.
+
+To start, we´ll help you with the first commands for this practical activity:
+
+``mkdir /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected``
+
+``ln -s /home/manager/course_data/Reference_alignment/07-chikv-align/annotation.txt /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected/``
+
+``ln -s /home/manager/course_data/Reference_alignment/07-chikv-align/chikv-genome.fasta /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected/``
+
+``samtools view -s 0.01 -b /home/manager/course_data/Reference_alignment/07-chikv-align/chikv-aln.sorted.bam > /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected/chikv-subsample.bam``
+
+``samtools sort /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected/chikv-subsample.bam -o /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected/chikv-subsample.sorted.bam``
+
+``samtools index /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected/chikv-subsample.sorted.bam``
+
+``rm /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected/chikv-subsample.bam``
+
+``cd /home/manager/course_data/Consensus_and_variant_calling/chikv-corrected/``
+
+From here you should be able to follow the steps above to answer the questions below:
+
+**Question6: How many mapped reads do you have in the 1% subsampled 'chikv-consensus-subsample_01p.bam' file?**
 >Answer: 48194
 >
-**Question 2: What is the allele frequency at position 757?**
+**Question7: What is the allele frequency at position 757?**
 >Answer: A-->G    AF=0.062893
