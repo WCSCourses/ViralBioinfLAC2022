@@ -38,7 +38,7 @@ Let´s index our reference:
 
 ``samtools faidx dengue-genome.fa``
 
-``bcftools mpileup -f dengue-genome.fa dengue-subsample_01p.bam | bcftools call -mv -Oz --ploidy-file annotation.txt -o calls.vcf.gz``
+``bcftools mpileup -f dengue-genome.fa dengue-subsample.sorted.bam | bcftools call -mv -Oz --ploidy-file annotation.txt -o calls.vcf.gz``
 
 ``tabix calls.vcf.gz``
 
