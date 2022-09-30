@@ -90,9 +90,6 @@ LoFreq comes with a variety of subcommands. By just typing ``lofreq`` you will g
 
 Now let's see what ``lofreq call`` can do. For this tutorial, we will be using the standard presets for lofreq but when running this on your own datasets, I would encourage you to explore all the options available in lofreq by checking out the [github page](https://github.com/CSB5/lofreq).
 
-
-``lofreq call -b dengue-subsample.sorted.bam -f dengue-genome.fa > dengue-variants-original-ref.vcf`` **NOT WORKING**
-
 ``lofreq call -f dengue-genome.fa -o dengue.vcf dengue-subsample.sorted.bam``
 
       The outputted VCF file consists of the following fields:
