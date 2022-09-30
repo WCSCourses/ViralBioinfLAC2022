@@ -189,5 +189,5 @@ From here you should be able to follow the steps above to answer the questions b
 **Question6: How many mapped reads do you have in the 1% subsampled 'chikv-cons-subsample.sorted.bam' file?**
 >Answer: 47486
 >
-**Question7: What is the allele frequency at position 757?**
->Answer: A-->G    AF=0.062893
+**Question7: What is the allele frequency at position 757 (chikv-cons.vcf)?**
+>Answer: A-->G    AF=0.051948
