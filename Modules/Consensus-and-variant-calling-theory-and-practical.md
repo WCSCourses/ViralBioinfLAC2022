@@ -186,8 +186,8 @@ To start, we´ll help you with the first commands for this practical activity:
 
 From here you should be able to follow the steps above to answer the questions below:
 
-**Question6: How many mapped reads do you have in the 1% subsampled 'chikv-consensus-subsample_01p.bam' file?**
->Answer: 48194
+**Question6: How many mapped reads do you have in the 1% subsampled 'chikv-cons-subsample.sorted.bam' file?**
+>Answer: 47486
 >
 **Question7: What is the allele frequency at position 757?**
 >Answer: A-->G    AF=0.062893
