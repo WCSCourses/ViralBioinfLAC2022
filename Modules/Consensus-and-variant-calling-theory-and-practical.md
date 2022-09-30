@@ -90,7 +90,12 @@ LoFreq comes with a variety of subcommands. By just typing ``lofreq`` you will g
 
 Now let's see what ``lofreq call`` can do. For this tutorial, we will be using the standard presets for lofreq but when running this on your own datasets, I would encourage you to explore all the options available in lofreq by checking out the [github page](https://github.com/CSB5/lofreq).
 
-``lofreq call -f dengue-genome.fa -o dengue.vcf dengue-subsample.sorted.bam``
+LoFreq can also call indels but has to be explicitly told to do so, and indels must be re-calibrated beforehand using the lofreq indelqual command which will create a
+new BAM file. 
+
+``lofreq indelqual --dindel -f dengue-genome.fa dengue-subsample.sorted.bam -o dengue_indels.bam``
+
+``lofreq call --call-indels -f dengue-genome.fa -o dengue.vcf dengue_indels.bam``
 
       The outputted VCF file consists of the following fields:
       - CHROM: the chromosome – in this case the SARS2 ref sequence NC_045512.2
@@ -148,7 +153,9 @@ Let's continue by building an index for our new consensus reference genome:
 
 ``samtools faidx dengue-consensus-bcftools.fa``
 
-``lofreq call -f dengue-consensus-bcftools.fa -o dengue-cons.vcf dengue-cons-subsample.sorted.bam``
+``lofreq indelqual --dindel -f dengue-consensus-bcftools.fa dengue-cons-subsample.sorted.bam -o dengue-cons_indels.bam``
+
+``lofreq call --call-indels -f dengue-consensus-bcftools.fa -o dengue-cons.vcf dengue-cons_indels.bam``
 
 This will take a few minutes to run depending on your system, but you should soon see a new file in your directory called: **dengue-cons.vcf**
 
