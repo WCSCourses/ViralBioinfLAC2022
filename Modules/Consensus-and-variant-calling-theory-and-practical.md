@@ -97,7 +97,7 @@ Now let's see what ``lofreq call`` can do. For this tutorial, we will be using t
 
       The outputted VCF file consists of the following fields:
       - CHROM: the chromosome – in this case the SARS2 ref sequence NC_045512.2
-      -POS: the position on the chromosome the variant is at
+      - POS: the position on the chromosome the variant is at
       - ID: a ‘.’ but LoFreq can be run with a database of known variants to annotate this field
       - REF: the reference base at this position
       - ALT: the alternate base (the mutated base) at this position
