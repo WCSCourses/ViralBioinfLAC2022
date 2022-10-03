@@ -153,11 +153,11 @@ Take a look at the first few lines of each file by executing this command:
 
 Let's examine the quality of these sequence data using a really useful piece of software called [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
 
-We can launch the graphical interface by simply executing `fastqc` on the Terminal command line. However, it is often more convenient to use the software in  command-line mode. Execute the following command in the Terminal:
+We can launch the graphical interface by simply executing ``fastqc`` on the Terminal command line. However, it is often more convenient to use the software in the command-line mode. Execute the following command in the Terminal:
 
     fastqc *.fastq
 
-This will generate some messages something like this:
+You will see some messages like this on your screen:
 
     Started analysis of SRR19504912_1.fastq
     Approx 5% complete for SRR19504912_1.fastq
@@ -176,7 +176,7 @@ This will generate some messages something like this:
     Analysis complete for SRR19504912_2.fastq
 
 
-Now, execute the command `ls- lh` and you should see some new files have appeared:
+Now, execute the command ``ls- lh`` and you should see some new files have appeared:
 
  
     total 400M
