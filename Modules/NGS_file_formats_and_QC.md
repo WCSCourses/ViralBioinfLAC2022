@@ -134,7 +134,7 @@ You shouls see this information printed on your screen:
     reads written   : 613,382
 
 
-You should now have two new files have in your NGS_file_formats_and_data_QC directory called *SRR19504912_1.fastq*  and *SRR19504912_2.fastq*. There are two files because this dataset consists of paired sequence reads. 
+You should now have two new files in your NGS_file_formats_and_data_QC directory called *SRR19504912_1.fastq*  and *SRR19504912_2.fastq*. There are two files because this dataset consists of paired sequence reads. 
 
 **Question 2: What is the size of the files you have downloaded?**
 
@@ -199,19 +199,16 @@ You should then see something like this:
 
 Note that there are two tabs in the Firefox web browser; there is one for the QC report for *SRR19504912_1.fastq*  and another for *SRR19504912_2.fastq*.
 
-There is a lot of QC information in these reports. Feel free to explore these in your own time and take a look at the FastQC homepage at https://www.bioinformatics.babraham.ac.uk/projects/fastqc/ and see the tutorial video at http://www.youtube.com/watch?v=bz93ReOv87Y.
+There is a lot of QC information in these reports. Feel free to explore these in your own time and take a look at the [FastQC homepage](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) where you can find the [explanation](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/) to each report FastQC is generating and we recommend you to watch the tutorial video at http://www.youtube.com/watch?v=bz93ReOv87Y.
 
 For now, we are just going to look at
 - Basic statistics
 - Per-base sequence quality 
 - Adapter content
 
-### Questions:
-
- - How many sequence reads are there? Does your answer match your
-   previous answer (based on `wc -l`) ?
- - With respect to quality scores, which of the two files has better-quality data: *SRR19504912_1.fastq* or *SRR19504912_2.fastq*.
- - Are these datasets contaminated with any Illumina sequencing adapter oligonucleotides?
+**Question 4: Analysing FastQC report, how many reads are there? Does this answer match your previous answer (based on ``wc`` command)?**
+**Question 5: With respect to quality scores, which of the two files has better-quality data: *SRR19504912_1.fastq* or *SRR19504912_2.fastq*?**
+**Question 6: Are these datasets contaminated with any Illumina sequencing adapter oligonucleotides?**
 
 ## Trimming and filtering to remove poor-quality data
 
@@ -219,22 +216,20 @@ When you inspected the FastQC reports, you probably noticed that *SRR19504912_1.
 
     trim_galore -q 25 --length 50 --paired SRR19504912_1.fastq SRR19504912_2.fastq
 
-Now, when you list the contents of the directory with `ls -lh`, you will notice two new files called *SRR19504912_1_val_1.fq* and *SRR19504912_2_val_2.fq*. These are the trimmed-and-filtered versions of original files *SRR19504912_1.fastq* and *SRR19504912_2.fastq*. Now, let's run FastQC on these two new 'cleaned' files:
+Now, when you list the contents of the directory with ``ls -lh``, you will notice two new files called *SRR19504912_1_val_1.fq* and *SRR19504912_2_val_2.fq*. These are the trimmed-and-filtered versions of original files *SRR19504912_1.fastq* and *SRR19504912_2.fastq*. Now, let's run FastQC on these two new 'cleaned' files:
 
     fastqc *.fq
 
- This will create QC reports, in HTML format, for the cleaned FASTQ files. Now let's take a look at these files:
+ This will create QC reports, in HTML format, for the 'cleaned' FASTQ files. Now let's take a look at these files:
 
-     firefox *.html
+     firefox *.html &
 
-### Questions:
-
- - How many reads were removed by TrimGalore from each FASTQ file?
- - What impact has TrimGalore had upon the lengths of the sequence reads?
- - What impact has TrimGalore had upon adapter contamination?
- - Has TrimGalore altered  the distribution of quality scores?
+**Question 7: How many reads were removed by TrimGalore from each FASTQ file?**
+**Question 8: What impact has TrimGalore had upon the lengths of the reads?**
+**Question 9: What impact has TrimGalore had upon adapter contamination?**
+**Question 10: Has TrimGalore altered  the distribution of quality scores?**
  
- You can read more about TrimGalore at https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/.
+You can read more about TrimGalore at https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/.
 
 Congratulations on reaching the end of this session! You should now be familiar with some of the most common file formats used in analysing NGS data and you know how to access and perform some basic QC on datasets of NGS sequence reads.
 
