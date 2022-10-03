@@ -57,6 +57,9 @@ The Viral Genomics and Bioinformatics course will teach participants how to anal
 
 **Module 5 - Introduction to BASH scripting**  
 ** Josefina -  check **
+
+[Online Manual - BASH scripting](BASHscripting.md)
+
 [PDF Manual - Bash Scripting](Modules/BASH_scripting.pdf)      
 <!-- [PDF Answers - Bash Scripting](Modules/Lectures_and_Answers/bash_scripting/code_description_BASH-Practical.pdf).  -->
 <!-- [Answer Scripts Folder - Bash Scripting](Modules/Lectures_and_Answers/bash_scripting/)  -->
