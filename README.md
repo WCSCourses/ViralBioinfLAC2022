@@ -53,8 +53,7 @@ The Viral Genomics and Bioinformatics course will teach participants how to anal
 <!-- [Online Manual - Introduction to NGS](Modules/Introduction_to_NGS.md) -->
   
 **Module 4 - NGS file formats and data & QC**  
-** Josefina+Pablo -  check **
-<!-- [Online Manual - NGS data Quality Control QC](Modules/NGS_file_formats_and_QC.md)  -->
+[Online Manual - NGS data Quality Control QC](Modules/NGS_file_formats_and_QC.md)
 
 **Module 5 - Introduction to BASH scripting**  
 ** Josefina -  check **
