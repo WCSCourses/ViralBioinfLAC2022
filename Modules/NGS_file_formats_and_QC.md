@@ -231,5 +231,5 @@ Now, when you list the contents of the directory with ``ls -lh``, you will notic
  
 You can read more about TrimGalore at https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/.
 
-Congratulations on reaching the end of this session! You should now be familiar with some of the most common file formats used in analysing NGS data and you know how to access and perform some basic QC on datasets of NGS sequence reads.
+>Congratulations on reaching the end of this session! You should now be familiar with some of the most common file formats used in analysing NGS data and you know how to access and perform some basic QC on datasets of NGS sequence reads.
 
