@@ -49,12 +49,15 @@ The Viral Genomics and Bioinformatics course will teach participants how to anal
 <!-- [PDF Solutions - Introduction to Linux + Text processing](Modules/Lectures_and_Answers/Linux_solutions_to_exercises_and_quiz.pdf) -->
 
 **Module 3 - Introduction to NGS sequencing**  
-[Online Manual - Introduction to NGS](Modules/Introduction_to_NGS.md)
+**Marta + Xoilson - check **
+<!-- [Online Manual - Introduction to NGS](Modules/Introduction_to_NGS.md) -->
   
 **Module 4 - NGS file formats and data & QC**  
-[Online Manual - NGS data Quality Control QC](Modules/NGS_file_formats_and_QC.md)
+** Josefina+Pablo -  check **
+<!-- [Online Manual - NGS data Quality Control QC](Modules/NGS_file_formats_and_QC.md)  -->
 
 **Module 5 - Introduction to BASH scripting**  
+** Josefina -  check **
 [PDF Manual - Bash Scripting](Modules/BASH_scripting.pdf)      
 <!-- [PDF Answers - Bash Scripting](Modules/Lectures_and_Answers/bash_scripting/code_description_BASH-Practical.pdf).  -->
 <!-- [Answer Scripts Folder - Bash Scripting](Modules/Lectures_and_Answers/bash_scripting/)  -->
