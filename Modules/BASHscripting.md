@@ -168,7 +168,7 @@ What our script is telling us is the following:
 
     Substring with first 3 characters deleted and printing the following 7 characters= 1950491
 
-    Substring printing last 5 characters= \_1.fq
+    Substring printing last 5 characters= _1.fq
 
 
 Let´s create a new script called GetPairName.sh
