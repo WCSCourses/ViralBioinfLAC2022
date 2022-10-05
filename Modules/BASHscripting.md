@@ -107,7 +107,7 @@ Let´s see an example:
 
     echo "Hello $myname"
     
-When we execute this command we´ll see something like this:    
+When we execute this script we´ll see something like this:    
     
 ![image](https://user-images.githubusercontent.com/65819144/194131423-e5069868-ef43-4c23-96f9-fdf2647794fa.png)
 
@@ -160,10 +160,15 @@ Bash scripting provides an option to extract a substring from a string (let´s c
  
  ![image](https://user-images.githubusercontent.com/65819144/194148732-6d39d89b-2522-4f95-8720-c4d7709d5740.png)
 
+What our script is telling us is the following:
 
+    String length= 16
 
+    Substring with first 3 characters deleted= 19504912_1.fq
 
+    Substring with first 3 characters deleted and printing the following 7 characters= 1950491
 
+    Substring printing last 5 characters= \_1.fq
 
 
 
