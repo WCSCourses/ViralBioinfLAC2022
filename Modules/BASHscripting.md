@@ -171,221 +171,49 @@ What our script is telling us is the following:
     Substring printing last 5 characters= \_1.fq
 
 
+Let´s create a new script called GetPairName.sh
 
-
-
-
-This section will show the example of string operation Length, Substring, and Find and Replace.
-
-### String Length
-There are many ways to calculate the string length:
-1. A simple way to calculate the length of the string is to use # symbol.
-
-**Syntax:**
-
-``$[#string_variable_name]``
-
-2. Calculate the length of the string using an ``expr`` command with an option “length”.
-
-**Syntax:**
-
-``expr length “$string_variable_name”``
-
-3. Use an ``awk`` command to calculate the length of the string
-
-**Syntax:**
-
-``echo $string_variable_name | awk ‘{print length}’``
-
-![Imagen1](https://user-images.githubusercontent.com/65819144/190473883-681370a6-e090-454e-9e47-d2d3dbce5731.png)
-
-### Substring
-
-Bash scripting provide an option to extract a substring from a string.
-
-**Syntax:**
-
-``${string:position:length}``
-
-This means that we will extract **Length** characters of substring from **String** at **Position**.
-
-- Example 1: *Extract substring from start until specific length*
-
-![Imagen2](https://user-images.githubusercontent.com/65819144/190475217-a354438f-b8ba-4234-a5ac-9eb2ae5cff66.png)
-
-- Example 2: *Extract substring from specific character onwards*
-
-![image](https://user-images.githubusercontent.com/65819144/190475700-0639ab59-86b9-4c91-ab99-1093482a2b45.png)
-
-- Example 3: *Delete the first 3 characters and then print 12 subsequent characters*
-
-![image](https://user-images.githubusercontent.com/65819144/190475927-93f0773b-a33c-42d2-b30d-43e5e823ddee.png)
-
-- Example 4: *Extract a specific number of characters counting from the end of the string*
-
-![image](https://user-images.githubusercontent.com/65819144/190476120-43c4983f-1b28-4b4e-9c78-07174f3777c1.png)
-
-### Shortest (non-greedy) substring match
-
-The syntax for deleting the shortest match of the substring from the string
-
-*Delete matched substring from the beginning of string*
-
-**Syntax**
-
-``${string#substring}``
-
-*Delete matched substring from the end of string*
-
-**Syntax**
-
-``${string%substring}``
-
-![image](https://user-images.githubusercontent.com/65819144/190481902-b85c0e72-8aed-46a3-8ca6-9e777b4b8d6d.png)
-
-### Longest (greedy) substring match
-
-The syntax for deleting the longest match of substring from string
-
-*Delete match substring from the beginning of string*
-
-**Syntax:**
-
-``${string##substring}``
-
-
-*Delete match substring from the end of string*
-
-**Syntax:**
-
-``${string%%substring}``
-
-![image](https://user-images.githubusercontent.com/65819144/190486117-f1003cec-e155-4b36-b3fe-a5ca0ceef148.png)
-
-### Find and replace
-
-1. Replace only the first match
-
-*Find the pattern in string and replace only the **first match** by replacement.*
-
-**Syntax:**
-
-``${string/pattern/replacement}``
-
-![image](https://user-images.githubusercontent.com/65819144/190486468-d2a7f63f-690a-4f9a-a42b-ed8b58a92092.png)
-
-2. Replace all the matches
-
-*Find the pattern in string and replace **all matches** by replacement.*
-
-**Syntax:**
-
-``${string//pattern/replacement}``
-
-![image](https://user-images.githubusercontent.com/65819144/190487552-7a791bd1-abf0-450b-b17d-0b5e850167d1.png)
-
-3. Replace at the beginning or the end
-
-Find the pattern in string and replace only first matched pattern with the replacement from the beginning of the string
-
-**Syntax:** 
-
-``${string/#pattern/replacement}``
-
-Find the pattern in string and replace only first matched pattern with the replacement from the end of the string
-
-**Syntax:**
-
-``${string/%pattern/replacement}``
-
-![image](https://user-images.githubusercontent.com/65819144/190488676-603cc2af-fc00-473b-a78d-0c9956f1966c.png)
-
-## Arrays
-
-An array is a data container comprised of two parts including keys and values.
-
-- Create indexed or associative arrays using ``declare`` command
-
-**Syntax:**
-   
-   1. Bash indexed array: the keys of array are ordered integers.
-
-    declare -a array_name
-    array_name=(value1 value2)
+    #!/bin/bash 
     
-   2. Bash associative array: the keys of array are strings.
+    filename1="SRR19504912_1.fq" 
     
-    declare -A array_name
-    array_name=(["key1"]="value1" ["key2"]="value2")
+    filename2=${filename1%_1.fq}_2.fq 
     
-- Access values of an array
-1. Access all data in the array
+    echo $filename2 
     
-    ``${array_name[@]}``
+    sample1=sample${filename1#SRR} 
+    
+    echo $sample1
+    
+![image](https://user-images.githubusercontent.com/65819144/194152712-2f1a0aeb-abfe-4fb4-8bbe-1b0ecf63bc15.png)
 
-2. Show all index of the array
+Let´s practice what we´ve learnt until now:
 
-   ``${!array_name[@]}``
+**Exercise 1:** Write a SecondScript.sh that lists (``ls``) the files in your directory
 
-3. Access to the data of the index n of the array
+**Exercise 2:** Write a CountScript.sh that counts the lines (``wc –l``) in the file SRR19504912_1.fastq present in /home/manager/course_data/NGS_file_formats_and_QC
 
-   ``${array_name[n]}``
+**Exercise 3:** Modify your SecondScript.sh so that it lists the files in any specified directory as the input to the script. The command line execution would look like:
 
-4. Show the length of the array
+    SecondScript.sh /path/to/a/directory 
+    
+**Exercise 4:** Modify your CountScript.sh so that it counts the lines in any specified file that is the input to the script. The command line
+execution would look like:
 
-   ``${#array_name[@]}``
+    CountScript.sh /path/to/a/file
+    
+**Exercise 5:** Modify the HelloToYou.sh script so that it takes two arguments (your firstname as $1 and surname as $2) from the command line. Command line execution would be:
 
-5. Remove both index and data at the index n
+    HelloToYou.sh Johann Mastropiero
+    
+**Exercise 6:** Modify your CountScript.sh file so that it takes the pair of files SRR19504912_1.fastq and SRR19504912_2.fastq (/home/manager/course_data/NGS_file_formats_and_QC) as input and outputs the number of lines in each file.
 
-   ``unset array_name[n]``
+**Exercise 7:** Modify the GetPairName.sh script so the user can provide any file name as input to the script.
 
-6. Add new data to the array at the index n
 
-   ``array_name[n]=”new_value”``
 
-![image](https://user-images.githubusercontent.com/65819144/190681882-230477b8-0a0d-440e-a616-2eaeb65c2205.png)
 
-## Arithmetic operators
 
-Arithmetic operator is a mathematical function that is used to perform an arithmetic operation. The following 11 arithmetic operators are supported by bash:
-
-![image](https://user-images.githubusercontent.com/65819144/190692679-7dc961fc-dfac-4b94-94d7-d10874e6ae95.png)
-
-Double parentheses can be used to specify arithmetic operation in Bash.
-
-**Syntax:**
-
-``((expression))``
-
-![image](https://user-images.githubusercontent.com/65819144/190692955-f3efec80-aa3c-4598-926b-d9ec8bcd5394.png)
-
-## Script Input (STDIN)
-
-1. Command line arguments
-
-The arguments are input that necessary for processing the script. The command line arguments are passed in a positional way.
-
-**Syntax:**
-
-```
-./bash_script.sh arg1 arg2 arg3..
-
-where arg1 = $1 arg2 = $2 arg3 = $3
-```
-
-![image](https://user-images.githubusercontent.com/65819144/190710136-690f82f4-7934-4ae6-8ffc-0114ac0fe73e.png)
-
-2. Read command
-
-A ``read`` command is built-in command that takes the user input into a variable.
-
-**Syntax:**
-
-```
-read OPTIONS ARGUMENT
-```
-
-![image](https://user-images.githubusercontent.com/65819144/190711672-8c7e90df-ecfe-4bf2-a19b-566fe3a9dc2b.png)
 
 ## Condition statement
 
