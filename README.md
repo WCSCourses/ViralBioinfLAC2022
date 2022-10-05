@@ -56,7 +56,7 @@ Pre-recorded-Video - Marta Giovanetti
 [Online Manual - NGS data Quality Control QC](Modules/NGS_file_formats_and_QC.md)
 
 **Module 5 - Introduction to BASH scripting**  
-[Online Manual - BASH scripting](BASHscripting.md)
+[Online Manual - BASH scripting](Modules/BASHscripting.md)
 
 [PDF Manual - Bash Scripting](Modules/BASH_scripting.pdf)      
 <!-- [PDF Answers - Bash Scripting](Modules/Lectures_and_Answers/bash_scripting/code_description_BASH-Practical.pdf).  -->
