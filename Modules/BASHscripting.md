@@ -40,7 +40,7 @@ a "comment" and is useful for describing the script.
 ### Set the execution permission
 The execute permission of the bash script file can be checked by using ``ls -l`` command.
 
-![Imagen3](https://user-images.githubusercontent.com/65819144/190238876-543c9893-d117-4967-a839-d371c14f07ea.png)
+![image](https://user-images.githubusercontent.com/65819144/194087493-41003d5f-9d17-4d22-9e9d-c2f6cdb60671.png)
 
 In this example, **column 5** lists the size of a file/directory, **column 6** is the
 date it was last modified and **column 7** displays the file name.
@@ -54,28 +54,31 @@ directory. The next nine characters are split into three groups. Characters
 the group owners of the file and characters 8 to 10 indicate permissions
 for all other users. 
 
-In each case, if the first character is *r*, this means the user or group of users can **read** the file. If the second character is **w**, this
+In each case, if the first character is **r**, this means the user or group of users can **read** the file. If the second character is **w**, this
 means that the user or group of users can **write** to the file. Lastly, if the final character is **x**, this indicates that the file is **executable** by that user
 (i.e. it is a script or program they can run). Please note that directories are always executable if a user has permission to look at them.
 
-The current status of the execute permission of FirstScript.sh is “denied”. To change
-the execute permission, a command ``chmod`` , which is short for “change mode,” will be used.
+**Question 1: What are the current permissions for the script you´ve just created?**
+
+To change the execute permission, the command ``chmod`` , which is short for “change mode,” will be used.
 
 *Make a script executable:*
 
-``chmod +x FirstScript.sh``
+    chmod +x FirstScript.sh
 
-![Imagen4](https://user-images.githubusercontent.com/65819144/190239984-a08cac43-017f-430a-9c78-74ee0b8f4b63.png)
+![image](https://user-images.githubusercontent.com/65819144/194090824-0ac7e530-3692-4c17-9081-9e9e11fc4160.png)
+
+Now you´ve made your script executable. Let´s see how to run it.
 
 *Run script:* 
 
-``/path/to/file_script.sh``
+    /path/to/file_script.sh
 
 If you are in the directory where the script you want to excute is, type:
 
-``./FirstScript.sh``
+    ./FirstScript.sh
 
-“./” is indicating that the file script is located here
+> “./” is indicating that the file script is located here
 
 ## Variables
 
