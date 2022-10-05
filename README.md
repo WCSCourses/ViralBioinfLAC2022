@@ -17,7 +17,7 @@ The Viral Genomics and Bioinformatics course will teach participants how to anal
 - [Josefina Campos](https://www.researchgate.net/profile/Josefina-Campos-2), Centro Nacional de Genómica y Bioinfomática, ANLIS Malbrán, Argentina
 - [Sreenu Vattipally](https://www.gla.ac.uk/researchinstitutes/iii/staff/sreenuvattipally/), MRC-University of Glasgow Centre for Virus Research, UK
 - [Marta Giovanetti](), Oswaldo Cruz Foundation, Brazil
-- [Pablo Ramos](https://cidacs.bahia.fiocruz.br/en/), FIOCRUZ - Oswaldo Cruz Foundation, Brazil
+- [Pablo Ivan P Ramos](https://cidacs.bahia.fiocruz.br/en/), FIOCRUZ - Oswaldo Cruz Foundation, Brazil
 - [Richard Orton](https://www.gla.ac.uk/researchinstitutes/iii/staff/richardorton/), MRC-University of Glasgow Centre for Virus Research, UK
 - [Srikeerthana Kuchi](), MRC-University of Glasgow Centre for Virus Research, UK
 - [Maria Dolores Blanco Fernandez](Link), Faculty of Pharmacy and Biochemistry, University of Buenos Aires, Argentina
