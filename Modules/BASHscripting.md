@@ -82,35 +82,95 @@ If you are in the directory where the script you want to excute is, type:
 
 ## Variables
 
-Variables are important parts of programing. Using variable names enables you to pass information from the
-command line into your script and make the script more useful. Bash variables are untyped meaning the interpreter will define the data type automatically when assigning values to the variables. There are two types of bash variables in a shell or Linux system:
+Variables are important parts of programing. Using variable names enables you to pass information from the command line into your script and make the script more useful.
 
 ### User-Defined Variables
 
-These are the variables created by user. This type of variables can be defined in either upper or
-lower case, but generally in lower cases. The rules for naming user-defined bash
-variables are as follows:
-- A variable name can include alphabets, digit, and underscore (_): 
-
-       a. Valid names: level, level1, _level, level_1
-
-       b. Names cannot start with digit: 1level, 1_level
-       
-       
+These are the variables created by user. The rules for naming user-defined bash variables are as follows:
+- A variable name can include alphabets, digit, and underscore (_). 
 - The variable name might be in all CAPS, all lowercase, or a mixture of both.
 - The variable name is case-sensitive. For example, “Sequence” and “sequence”
 are considered as two separate variables.
 - The equal sign (=) is used for assigning a value to a variable. The variable is
 located on the left of equal sign while value is on the right. The whitespace
-**should not** be added on either side of qual sign.
+**should not** be added on either side of the equal sign.
 - When referring to a previously defined variable, the dollar sign ($) is prefixed to
 the variable's name.
 
-![Imagen6](https://user-images.githubusercontent.com/65819144/190246386-4bcec7ff-8b16-4690-b88c-9d1ace0bf9c1.png)
+Let´s see an example:
+
+    #!/bin/bash
+
+    # My script using variable
+    
+    myname=$1
+
+    echo "Hello $myname"
+    
+When we execute this command we´ll see something like this:    
+    
+![image](https://user-images.githubusercontent.com/65819144/194131423-e5069868-ef43-4c23-96f9-fdf2647794fa.png)
 
 ## String manipulation
 
-A string is a combination of a set of characters that may also contain numbers. String Manipulation is defined as performing several operations on a string resulting change in its contents. Bash scripting supports various string manipulations. This section will show the example of string operation Length, Substring, and Find and Replace.
+A string is a combination of a set of characters that may also contain numbers. String Manipulation is defined as performing several operations on a string resulting change in its contents. Bash scripting supports various string manipulations. 
+
+We will be working on a new script called HelloToYou.sh:
+
+    #!/bin/bash
+
+    a="Johann"
+    
+    b="Mastropiero"
+    
+    c="$a $b"
+
+    echo "Hello $c"
+
+![image](https://user-images.githubusercontent.com/65819144/194136706-1e0d9d6b-0e41-4d95-9569-87e33bd9d5c9.png)
+
+Bash scripting provides an option to extract a substring from a string (let´s create Substring.sh):
+
+    #!/bin/bash
+
+    filename="SRR19504912_1.fq" 
+
+    # Print string length 
+    
+    echo ${#filename} 
+
+    # Delete first 3 chars
+    
+    beg=${filename:3} 
+
+    echo $beg 
+    
+    # Delete first 3 chars and print 7 chars
+    
+    mid=${filename:3:7} 
+    
+    echo $mid 
+    
+    # Print last 5 chars 
+    
+    end=${filename: -5} 
+    
+    echo $end
+    
+ 
+ ![image](https://user-images.githubusercontent.com/65819144/194148732-6d39d89b-2522-4f95-8720-c4d7709d5740.png)
+
+
+
+
+
+
+
+
+
+
+
+This section will show the example of string operation Length, Substring, and Find and Replace.
 
 ### String Length
 There are many ways to calculate the string length:
