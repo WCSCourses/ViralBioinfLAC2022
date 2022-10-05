@@ -40,7 +40,7 @@ The Viral Genomics and Bioinformatics course will teach participants how to anal
 [View Timetable here](https://docs.google.com/document/d/1sBF9T7hCbNgtoI3THcaht030gFDwiiuY/edit?usp=sharing&ouid=101020480766226270980&rtpof=true&sd=true)
 
 ### Advanced Learning and Training Handout
-[View ALT Handout here](Modules/Advanced%20Courses%20ALT%20Sessions%20handouts%20edited.pdf)
+[View ALT Handout here](Modules/Advanced%20Courses%20ALT%20Sessions%20handouts%20edited%20LAC.pdf)
 
 ## Course manual
 **Module 1 - Introduction to Linux + Module 2 - Linux text processing**   
@@ -49,15 +49,13 @@ The Viral Genomics and Bioinformatics course will teach participants how to anal
 <!-- [PDF Solutions - Introduction to Linux + Text processing](Modules/Lectures_and_Answers/Linux_solutions_to_exercises_and_quiz.pdf) -->
 
 **Module 3 - Introduction to NGS sequencing**  
-**Marta + Xoilson - check **
+Pre-recorded-Video - Marta Giovanetti
 <!-- [Online Manual - Introduction to NGS](Modules/Introduction_to_NGS.md) -->
   
 **Module 4 - NGS file formats and data & QC**  
 [Online Manual - NGS data Quality Control QC](Modules/NGS_file_formats_and_QC.md)
 
 **Module 5 - Introduction to BASH scripting**  
-** Josefina -  check **
-
 [Online Manual - BASH scripting](BASHscripting.md)
 
 [PDF Manual - Bash Scripting](Modules/BASH_scripting.pdf)      
