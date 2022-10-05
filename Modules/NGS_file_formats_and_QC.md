@@ -176,7 +176,7 @@ You will see some messages like this on your screen:
     Analysis complete for SRR19504912_2.fastq
 
 
-Now, execute the command ``ls- lh`` and you should see some new files have appeared:
+Now, execute the command ``ls -lh`` and you should see some new files have appeared:
 
  
     total 400M
@@ -233,3 +233,20 @@ You can read more about TrimGalore at https://www.bioinformatics.babraham.ac.uk/
 
 >Congratulations on reaching the end of this session! You should now be familiar with some of the most common file formats used in analysing NGS data and you know how to access and perform some basic QC on datasets of NGS sequence reads.
 
+### Bonus!
+
+#### What if you had a large number of FastQC reports to analyze?
+
+Multiqc (https://multiqc.info/) is a tool that summarizes different types of NGS reports (not just FastQC).
+
+First, install the tool:
+
+    pip install multiqc
+
+In the folder with reports, run:
+
+    multiqc .
+
+See summarized report in a browser:
+
+    firefox multiqc_report.html &
