@@ -285,6 +285,29 @@ We can extend our conditional statement to have another clause by using an **if.
     ACTION_2
     fi
 
+Here's an example: 
+
+    #!/bin/bash
+    
+    if [ "$1"=="Johann" ];then
+      echo "Hello again Johann"
+    else
+      echo "Unrecognized name"
+    fi
+    
 ![image](https://user-images.githubusercontent.com/65819144/190714186-69a01fa9-6c62-4ad9-bc0c-fb29bf78b446.png)
 
-3. **If..elif..else statement (if-else in ladder)**
+## For loop
+
+Loops allow us to take a series of commands and keep re-running them until a particular situation is reached. They are useful for automating repetitive tasks.
+
+Basically, what the **for loop** does is say for each of the items in a given list, perform the given set of commands. For loop starts with **do** and
+ends with **done**. Let's take a look at its syntax:
+
+     for ITEM in [LIST]
+     do
+       ACTION
+     done
+     
+
+
