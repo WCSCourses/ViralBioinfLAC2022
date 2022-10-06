@@ -8,23 +8,27 @@
 
 Let's start by doing some quick prep/housekeeping on our dataset:
 
+* First, let's unzip a big file containing our sequences and ancillary datasets:
 
-``unzip /home/manager/course_data/Reference_alignment/Reference_alignment.zip``
+    ``cd ~/course_data/Reference_alignment``
+    
+    ``unzip /home/manager/course_data/Reference_alignment/Reference_alignment.zip``
 
-``mv /home/manager/course_data/Reference_alignment/Reference_alignment/07-dengue_align /home/manager/course_data/Reference_alignment/``
+* Move our files to the correct location:
 
-``mv /home/manager/course_data/Reference_alignment/Reference_alignment/07-chikv-align /home/manager/course_data/Reference_alignment/``
+    ``mv /home/manager/course_data/Reference_alignment/Reference_alignment/07-dengue_align /home/manager/course_data/Reference_alignment/``
 
-``rm -r /home/manager/course_data/Reference_alignment/Reference_alignment/``
+    ``mv /home/manager/course_data/Reference_alignment/Reference_alignment/07-chikv-align /home/manager/course_data/Reference_alignment/``
 
-``rm -r /home/manager/course_data/Reference_alignment/__MACOSX/``
+* Delete some unused folders:
 
+    ``rm -r /home/manager/course_data/Reference_alignment/Reference_alignment/``
 
+    ``rm -r /home/manager/course_data/Reference_alignment/__MACOSX/``
 
 >*NOTE:* Be careful when using 'rm -r' ! You can easily delete quite a bit of data this way with no chance to recover it! When doing this, it's  a good idea to use *absolute paths* to avoid deleting something important by accident.
 
 Now that is done, let's navigate to the proper folder:
-
 
 ``cd /home/manager/course_data/Reference_alignment/07-dengue_align/``
 
@@ -83,6 +87,8 @@ Now let's align the samples to our reference genome using ``bwa mem``:
 
 ``bwa mem dengue-genome.fa dengue_R1.fq.gz dengue_R2.fq.gz > dengue-aln.sam``
 
+>Note: This will take around 5-6 minutes in our VM.
+>
 ## Manipulating your SAM file with SAMtools
 
 >SAMtools is a library and software package for parsing and manipulating
@@ -207,7 +213,7 @@ An explanation of this command is as follows:
 **Question: how many reads are unmapped?**
 
 >If your results show that you have **5,009,395 mapped** reads and
->**58,129 unmapped** reads, you are doing great!
+>**58,120 unmapped** reads, you are doing great!
 
 Another way you can get these data is to use:
 
