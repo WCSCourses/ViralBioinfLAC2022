@@ -210,22 +210,15 @@ execution would look like:
 
 **Exercise 7:** Modify the GetPairName.sh script so the user can provide any file name as input to the script.
 
-
-
-
-
-
 ## Condition statement
 
-A condition statement is used for decision making in any programing language. Bash scripting also use this statement for making some decisions in an automated task.
-
-Comparison operators
-
-![image](https://user-images.githubusercontent.com/65819144/190711894-8c3cb573-6326-4291-8fff-02e7ba5ab3c9.png)
+A condition statement is used for decision making in any programing language. Bash scripting also uses this statement for making some decisions in an automated task.
 
 1. **If statement**
 
-The basic if statement contains one level of condition and action. The syntax consisting of **if** follow by **EXPRESSION** in square brackets. If the EXPRESSION is true, then **ACTION** will be performed. The statement ends with **fi**. One if statement can contain one (single condition) or more expressions (multiple conditions).
+The basic if statement contains one level of condition and action. The syntax consisting of **if** follow by **EXPRESSION** in square brackets. If the EXPRESSION is true, then **ACTION** will be performed. The statement ends with **fi**. If the expression returns false, the script will ignore (i.e. not execute) any code which lies between then and fi.
+
+One if statement can contain one (single condition) or more expressions (multiple conditions).
 
 - Single condition
 
