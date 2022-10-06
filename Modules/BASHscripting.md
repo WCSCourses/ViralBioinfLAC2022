@@ -231,10 +231,17 @@ One if statement can contain one (single condition) or more expressions (multipl
 The following example shows the basic “if statement” with single condition:
 
     #!/bin/bash
-    
-    if [ "$1"=="Johann" ];then
-      echo "Hello again Johann"
+
+    #Get input number from user input 
+    echo "Enter a number"
+    read n
+
+    #Check if input number less than 100
+    if [ $n -lt 100 ]; then
+      echo "$n is less than 100"
     fi
+
+<img width="1017" alt="image" src="https://user-images.githubusercontent.com/65819144/194428522-2d93bb26-bca1-46bc-887a-bd26467b5223.png">
 
 
 - Multiple conditions
@@ -259,11 +266,11 @@ Multiple conditions in “if statement” need BOOLEAN operator for joining betw
 
 The following example shows the basic “if statement” with multiple conditions:
 
-    #!/usr/bin/env bash
+    #!/bin/bash
  
     # Set the path for our file
 
-    file="/home/manager/course_data/NGS_file_formats_and_QC/SRR19504912_2.fastq"
+    file="reference.fasta"
  
     # Check whether file exists, is readable and has data
 
@@ -272,6 +279,7 @@ The following example shows the basic “if statement” with multiple condition
     	 echo "File is good"
     fi
     
+<img width="1066" alt="image" src="https://user-images.githubusercontent.com/65819144/194431634-8c56af71-4cbd-4488-aacb-d0389185a7a2.png">
 
 2. **If-else statement**
 
@@ -279,7 +287,7 @@ We can extend our conditional statement to have another clause by using an **if.
 
 **Syntax:**
 
-    if [ EXPRESSION ]; then
+    if [ EXPRESSION ];then
     ACTION_1
     else
     ACTION_2
@@ -289,13 +297,15 @@ Here's an example:
 
     #!/bin/bash
     
-    if [ "$1"=="Johann" ];then
+    a=$1
+    if [ "$a" == "Johann" ];then
       echo "Hello again Johann"
     else
       echo "Unrecognized name"
     fi
     
-![image](https://user-images.githubusercontent.com/65819144/190714186-69a01fa9-6c62-4ad9-bc0c-fb29bf78b446.png)
+<img width="700" alt="Screen Shot 2022-10-06 at 19 44 55" src="https://user-images.githubusercontent.com/65819144/194432025-cc9a07bd-0c62-473b-8a66-f1969ed4a8a6.png">
+
 
 ## For loop
 
