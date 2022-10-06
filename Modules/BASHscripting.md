@@ -322,7 +322,7 @@ ends with **done**. Let's take a look at its syntax:
 First, let's create a new folder with some fastq files you've worked in previous modules:
 
     mkdir fastq_sets
-    ln -s /home/manager/course_data/NGS_file_formats_and_data_QC/SRR19504912_*.fastq
+    ln -s /home/manager/course_data/NGS_file_formats_and_data_QC/SRR19504912_*.fastq .
     
 Now let's create a for loop
 
