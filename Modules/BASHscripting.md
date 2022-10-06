@@ -223,15 +223,19 @@ One if statement can contain one (single condition) or more expressions (multipl
 - Single condition
 
 **Syntax:**
-```
-if [ EXPRESSION ]; then
-ACTION
-fi
-```
+
+    if [ EXPRESSION ]; then
+    ACTION
+    fi
 
 The following example shows the basic “if statement” with single condition:
 
-![image](https://user-images.githubusercontent.com/65819144/190712412-0ba25622-843f-4425-b7d5-175894082593.png)
+    #!/bin/bash
+    
+    if [ "$1"=="Johann" ];then
+      echo "Hello again Johann"
+    fi
+
 
 - Multiple conditions
 
@@ -243,36 +247,43 @@ Multiple conditions in “if statement” need BOOLEAN operator for joining betw
 
 *AND operator*
 
-```
-if [ EXPRESSION_1 ] && [ EXPRESSION_2 ]; then
-ACTION
-fi
-```
+    if [ EXPRESSION_1 ] && [ EXPRESSION_2 ]; then
+    ACTION
+    fi
 
 *OR operator*
 
-```
-if [ EXPRESSION_1 ] || [ EXPRESSION_2 ]; then
-ACTION
-fi
-```
+    if [ EXPRESSION_1 ] || [ EXPRESSION_2 ]; then
+    ACTION
+    fi
 
 The following example shows the basic “if statement” with multiple conditions:
 
-![image](https://user-images.githubusercontent.com/65819144/190713691-2c53de70-e287-42c3-a1be-7253be62d140.png)
+    #!/usr/bin/env bash
+ 
+    # Set the path for our file
+
+    file="/home/manager/course_data/NGS_file_formats_and_QC/SRR19504912_2.fastq"
+ 
+    # Check whether file exists, is readable and has data
+
+    if [[ -e ${file} ]] && [[ -r ${file} ]] && [[ -s ${file} ]];then
+    	 # Execute this code if file meets those conditions
+    	 echo "File is good"
+    fi
+    
 
 2. **If-else statement**
 
-This pattern of conditional statement is used to execute one action with a true condition and the other action with a false condition.
+We can extend our conditional statement to have another clause by using an **if..else statement**. Here we are saying, **IF** our conditions are met, **THEN** execute the following commands. However, **ELSE IF** these conditions are not met, execute a different set of commands.
 
 **Syntax:**
-```
-if [ EXPRESSION ]; then
-ACTION_1
-else
-ACTION_2
-fi
-```
+
+    if [ EXPRESSION ]; then
+    ACTION_1
+    else
+    ACTION_2
+    fi
 
 ![image](https://user-images.githubusercontent.com/65819144/190714186-69a01fa9-6c62-4ad9-bc0c-fb29bf78b446.png)
 
