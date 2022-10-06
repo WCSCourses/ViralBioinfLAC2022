@@ -314,10 +314,16 @@ Loops allow us to take a series of commands and keep re-running them until a par
 Basically, what the **for loop** does is say for each of the items in a given list, perform the given set of commands. For loop starts with **do** and
 ends with **done**. Let's take a look at its syntax:
 
-     for ITEM in [LIST]
+     for ITEM in LIST
      do
        ACTION
      done
-     
+ 
+First, let's create a new folder with some fastq files you've worked in previous modules:
+
+    mkdir fastq_sets
+    ln -s /home/manager/course_data/NGS_file_formats_and_data_QC/SRR19504912_*.fastq
+    
+Now let's create a for loop
 
 
