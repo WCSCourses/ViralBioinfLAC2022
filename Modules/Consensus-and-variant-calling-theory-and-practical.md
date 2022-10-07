@@ -7,13 +7,15 @@
 
 Let's start by preparing the folder and files we will be working with:  
 
-``cd /home/manager/course_data/Consensus_and_variant_calling/dengue-corrected``
+``mkdir /home/manager/course_data/Consensus_and_variant_calling/dengue-corrected``
+
+``cd ~/course_data/Consensus_and_variant_calling/dengue-corrected/``
 
 ``cp /home/manager/course_data/Reference_alignment/07-dengue_align/annotation.txt .``
 
 ``cp /home/manager/course_data/Reference_alignment/07-dengue_align/dengue-genome.fa .``
 
-``samtools view -s 0.01 -b /home/manager/course_data/Reference_alignment/07-dengue_align/dengue-aln.bam > dengue-subsample.bam``
+``samtools view -s 0.01 -b /home/manager/course_data/Reference_alignment/07-dengue_align/dengue-aln.sorted.bam > dengue-subsample.bam``
 
 ``samtools sort dengue-subsample.bam -o dengue-subsample.sorted.bam``
 
@@ -143,8 +145,6 @@ As we mentioned previously, we would proceed with the **lofreq** run from this p
 
 ``samtools index dengue-cons-subsample.sorted.bam``
 
-``rm dengue-cons-subsample.sorted.bam``
-
 ``samtools view -c -F4 dengue-cons-subsample.sorted.bam``
 
 >As you can see from this final command, we now have 49829 reads mapped - not ideal in a normal situation, but good enough for illustrative purposes. 
@@ -160,6 +160,10 @@ Let's continue by building an index for our new consensus reference genome:
 This will take a few minutes to run depending on your system, but you should soon see a new file in your directory called: **dengue-cons.vcf**
 
 **Question3: how many variants has lofreq detected?**
+
+Tip: you can use `bcftools` for this:
+
+    bcftools stats dengue-cons.vcf > dengue-cons.stats
 
 **Question4: what type of variants are they?**
 
