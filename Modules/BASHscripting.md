@@ -344,8 +344,6 @@ Now let's create a for loop that will print the names of all the files in the fa
 
 **Exercise 8:** Use your GetPairName.sh script as the base for a new one  that will check with an (if) that the input file has \_1.fastq (end=${filename: -8}) and only then print out the paired sample name.
 
->Create this script using the files in the fastq_sets directory.
-
 **Exercise 9:** Write a script called Loop2.sh to loop (for) through the
 directory fastq_sets and copy (cp) the files to your current
 directory.
