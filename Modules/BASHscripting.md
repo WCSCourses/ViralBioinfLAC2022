@@ -191,7 +191,7 @@ Let´s practice what we´ve learnt until now:
 
 **Exercise 1:** Write a SecondScript.sh that lists (``ls``) the files in your directory
 
-**Exercise 2:** Write a CountScript.sh that counts the lines (``wc –l``) in the file SRR19504912_1.fastq present in /home/manager/course_data/NGS_file_formats_and_QC
+**Exercise 2:** Write a CountScript.sh that counts the lines (``wc –l``) in the file SRR19504912_1.fastq present in /home/manager/course_data/NGS_file_formats_and_data_QC
 
 **Exercise 3:** Modify your SecondScript.sh so that it lists the files in any specified directory as the input to the script. The command line execution would look like:
 
