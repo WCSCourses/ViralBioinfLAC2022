@@ -351,7 +351,7 @@ directory.
 **Exercise 10:** Modify your Loop2.sh script so that the files are
 renamed from .fastq to .fq
  
-**Exercise 11:** Modify your CountScript.sh so that it loops through
+**Exercise 11:** Write a script that loops through
 the fastq_sets directory (for) and if the file has \_1.fq
 (end=${filename: -5}), it counts the number of lines in the file
 (``wc –l``).
