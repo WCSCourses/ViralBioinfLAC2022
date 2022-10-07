@@ -319,11 +319,41 @@ ends with **done**. Let's take a look at its syntax:
        ACTION
      done
  
-First, let's create a new folder with some fastq files you've worked in previous modules:
+First, let's create a new folder with some fastq files you've worked with in previous modules:
 
     mkdir fastq_sets
+    cd fastq_sets
     ln -s /home/manager/course_data/NGS_file_formats_and_data_QC/SRR19504912_*.fastq .
     
-Now let's create a for loop
+Now let's create a for loop that will print the names of all the files in the fastq_sets directory and the number of lines in each file:
+
+    #!/bin/bash
+    for f in *.fastq
+    do
+    echo $f
+    wc -l $f
+    done
+    
+<img width="699" alt="Screen Shot 2022-10-07 at 13 07 39" src="https://user-images.githubusercontent.com/65819144/194598776-061873ca-a78a-456c-837e-fd15e0b5bffc.png">
+
+> The asterisk (\*) works as a wildcard, i.e. a character that can be used as a substitute for any of a class of characters. Here we are using the wildcard to use in our script all the files with a particular extension (.fastq).
+
+**Exercise 8:** Use your GetPairName.sh script as the base for a new one  that will check with an (if) that the input file has \_1.fastq (end=${filename: -8}) and only then print out the paired sample name.
+
+>Create this script using the files in the fastq_sets directory.
+
+**Exercise 9:** Write a script called Loop2.sh to loop (for) through the
+directory fastq_sets and copy (cp) the files to your current
+directory.
+
+**Exercise 10:** Modify your Loop2.sh script so that the files are
+renamed from .fastq to .fq
+ 
+**Exercise 11:** Modify your CountScript.sh so that it loops through
+the fastq_sets directory (for) and if the file has \_1.fq
+(end=${filename: -5}), it counts the number of lines in the file
+(``wc –l``).
+
+
 
 
