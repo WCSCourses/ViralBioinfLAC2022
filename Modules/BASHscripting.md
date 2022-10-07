@@ -210,7 +210,7 @@ execution would look like:
 
     HelloToYou.sh Johann Mastropiero
     
-**Exercise 6:** Modify your CountScript.sh file so that it takes the pair of files SRR19504912_1.fastq and SRR19504912_2.fastq (/home/manager/course_data/NGS_file_formats_and_QC) as input and outputs the number of lines in each file.
+**Exercise 6:** Modify your CountScript.sh file so that it takes the pair of files SRR19504912_1.fastq and SRR19504912_2.fastq (/home/manager/course_data/NGS_file_formats_and_data_QC) as input and outputs the number of lines in each file.
 
 **Exercise 7:** Modify the GetPairName.sh script so the user can provide any file name as input to the script.
 
