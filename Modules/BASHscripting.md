@@ -204,6 +204,8 @@ execution would look like:
 
     CountScript.sh /path/to/a/file
     
+>You could try this script with the reference.fasta file in the BASH_scripting directory.    
+    
 **Exercise 5:** Modify the HelloToYou.sh script so that it takes two arguments (your firstname as $1 and surname as $2) from the command line. Command line execution would be:
 
     HelloToYou.sh Johann Mastropiero
