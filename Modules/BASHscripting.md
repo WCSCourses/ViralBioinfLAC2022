@@ -197,7 +197,7 @@ Let´s practice what we´ve learnt until now:
 
     SecondScript.sh /path/to/a/directory 
     
->You could try testing this script with /home/manager/course_data to check all the modules you'll be working on during the course.
+>You could try testing this script with /home/manager/course_data as the input to check all the modules you'll be working on during the course.
     
 **Exercise 4:** Modify your CountScript.sh so that it counts the lines in any specified file that is the input to the script. The command line
 execution would look like:
