@@ -36,13 +36,13 @@ For that purpose, we have built a dataset consisting of 37 complete genome seque
 
 To carry out an alignment, the sequences need to be available in a file that can be read by the programs. In general, the FASTA format is accepted by most sequence alignment and edition programs. The time required for the analysis will depend on the power of the computer and the number of sequences to be analyzed. In general, it can be estimated that the computation time will increase linearly with the length of the sequences, and exponentially with the number of sequences to be aligned.
 
-The datasets (unaligned set of sequences: **LAC_SARSCoV2.fasta / LAC_DENV.fasta**) are located in:
+The datasets (unaligned set of sequences: **LAC_SARSCoV2.fasta / LAC_DENV.fasta**) are in:
 
 ```
-/home/manager/course_data/Phylogenetics_methods_and_tree_building/LAC/1_SARSCoV2/LAC_SARSCoV2.fasta
+/home/manager/course_data/Phylogenetics_methods_and_tree_building/LAC/1_SARSCoV2/
 ```
 ```
-/home/manager/course_data/Phylogenetics_methods_and_tree_building/LAC/2_DENV.fasta
+/home/manager/course_data/Phylogenetics_methods_and_tree_building/LAC/2_DENV/
 ```
 
 ### A.	Alignment with MAFFT
@@ -51,13 +51,14 @@ MAFFT is an advanced tool that can align using different alignment algorithms fo
 
 To use it on the VM, type mafft on the command-line, mafft --help will give you information about the proper syntax. 
 
-Please note that the procedure below is for the SARS-CoV-2 dataset, so if you will be analyzing the Dengue dataset as well, you need to go to the directory where that dataset is located and replace the file names in the instructions below.
+>*Please note that the procedure below is for the SARS-CoV-2 dataset, so if you will be analyzing the Dengue dataset as well, you need to go to the directory where that dataset is located and replace the file names in the instructions below.*
+
 
 
 1. Open a Terminal and go into the directory	that contains the dataset to align: LAC_SARSCoV2.fasta
 
 ```
-/home/manager/course_data/Phylogenetics_methods_and_tree_building/LAC/1_SARSCoV2/LAC_SARSCoV2.fasta
+/home/manager/course_data/Phylogenetics_methods_and_tree_building/LAC/1_SARSCoV2/
 ```
 
 2. Type: 
@@ -75,28 +76,32 @@ mafft --auto LAC_SARSCoV2.fasta > LAC_SARSCoV2_aln.fasta
 -------------------------
 #### [OPTIONAL] Alignment with Muscle (in Aliview)
 
-1. Execute Aliview and open the alignment: 
+1. Open a terminal and type: 
+```
+aliview
+```
+
+2. Open the file:
 ```
 File -> Open File: LAC_SARSCoV2.fasta
 ```
 
-2. Explore the Aliview window and locate the following elements: Sequence names, Sequences, Ruler.
+3. Explore the Aliview window and locate the following elements: Sequence names, Sequences, Ruler.
 
-
-3. Perform an alignment with the default program (Muscle): 
+4. Perform an alignment with the default program (Muscle): 
 ```
 Align -> Realign everything -> OK.
 ```
 
 *[The program will start, and different steps will be shown. Once the alignment is completed, the output file will be automatically shown.]*
 
-4. Check the alignment and realign regions if needed: 
+5. Check the alignment and realign regions if needed: 
 
 ```
 Select the region to realign -> Align -> Realign selected block.
 ```
 
-5. Save this alignment: 
+6. Save this alignment in the same directory: 
 ```
 File -> Save as fasta -> LAC_SARSCoV2_muscle_aln.fasta
 ```
@@ -110,17 +115,22 @@ The following instructions show the use of the alignment of SARS-CoV-2 generated
 
 **Edition in Aliview:**
 
-1. Execute Aliview and open the alignment: 
+1. Open a terminal and type: 
+```
+aliview
+```
+
+2. Open the alignment: 
 ```
 File -> Open File: LAC_SARSCoV2_aln.fasta
 ```
 
-2. Check the alignment and realign regions if needed: 
+3. Check the alignment and realign regions if needed: 
 ```
 Select the region to realign -> Align -> Realign selected block.
 ```
 
-3. Select the region to be deleted:
+4. Select the region to be deleted:
 
 a) For the left end of the alignment, select the last nucleotide of the region to be deleted (as in the figure below):
  
@@ -146,9 +156,9 @@ c) Repeat the procedure for internal regions if needed:
 - Select the region -> Edit -> Delete selected.
 ```
 
-4. Save the edited alignment:
+5. Save the edited alignment in the same directory:
 ```
-- File -> Save as fasta -> LAC_SARSCoV2_aln_edit.fasta
+- File -> Save as fasta -> LAC_SARSCoV2_aln_cut.fasta
 ```
 
 This file will be used to estimate the substitution model and infer the phylogenetic tree.
@@ -161,11 +171,11 @@ Specific objectives of this practice:
 - To build a Maximum Likelihood tree to assign the Pango lineage to a group of SARS-CoV-2 sequences obtained in Latin America.
 - To build a Maximum Likelihood tree to genotype three DENV-4 isolates that circulated in Brazil in 2012-2013 and determine if they belong to a unique transmission chain. 
 
-Datasets to use: **LAC_SARSCoV2_aln_cut.fasta (or DENV_aln_cut.fasta)**, from the practical activity 1.
+Datasets to use: **LAC_SARSCoV2_aln_cut.fasta (or LAC_DENV_aln_cut.fasta)**, from the practical activity 1.
 
 **Introduction to the IQ-TREE program:**
 
-This program allows you to perform phylogenetic analysis by Maximum Likelihood. It uses efficient algorithms to explore the tree space, allowing very large matrices to be analyzed with reliable results (hundreds or thousands of sequences). It allows estimating the evolutionary model (ModelFinder module) followed by the phylogenetic inference, and implements support measures to evaluate the reliability of the groupings or branches (Bootstrap, Ultrafast Bootstrap Approximation and probabilistic contrasts). The program can be downloaded and run locally (http://www.iqtree.org/), or on online servers such as http://iqtree.cibiv.univie.ac.at/ | https://www.phylo.org/  | https://www.hiv.lanl.gov/content/sequence/IQTREE/iqtree.html
+This program allows you to perform phylogenetic analysis by Maximum Likelihood. It uses efficient algorithms to explore the tree space, allowing very large matrices to be analyzed with reliable results (hundreds or thousands of sequences). It allows estimating the evolutionary model (ModelFinder module) followed by the phylogenetic inference and implements support measures to evaluate the reliability of the groupings or branches (Bootstrap, Ultrafast Bootstrap Approximation and probabilistic contrasts). The program can be downloaded and run locally (http://www.iqtree.org/), or on online servers such as http://iqtree.cibiv.univie.ac.at/ | https://www.phylo.org/  | https://www.hiv.lanl.gov/content/sequence/IQTREE/iqtree.html
 
 You can find many basic and advanced tutorials at http://www.iqtree.org/doc/
 
@@ -178,7 +188,7 @@ You can find many basic and advanced tutorials at http://www.iqtree.org/doc/
 
 1.	Open a Terminal and go into the folder that contains the edited alignment to analyze:
 ```
-~/course_data/Phylogenetics_methods_and_tree_building/LAC/1_SARSCoV2/LAC_SARSCoV2_aln_cut.fasta
+~/course_data/Phylogenetics_methods_and_tree_building/LAC/1_SARSCoV2/
 ```
 
 2.	Type: 
@@ -217,10 +227,12 @@ Once the process is finished, the output files will be found in the folder, incl
 
 ### B.	Tree visualization
 
-1. Open the FigTree program: In the terminal, type: 
+1. Open a Terminal and type: 
 ```
 figtree 
 ```
+
+2. Open the ML tree: 
 ```
 File -> Open -> select the file LAC_SARSCoV2_aln_cut.treefile
 ```
@@ -269,11 +281,11 @@ In addition, you can modify the size of the fonts (in Tip Labels, Legend, etc).
 
 IQ-TREE implements the likelihood mapping approach (Strimmer and von Haeseler, 1997; https://doi.org/10.1073/pnas.94.13.6815) to assess the phylogenetic information of an input alignment. The detailed results will be printed to .iqtree report file. The likelihood mapping plots will be printed to .lmap.svg and .lmap.eps files.
 
-To perform a likelihood mapping analysis (ignoring tree search) with 2000 quartets for the alignment SARSCoV2_aln_cut.fasta with a model being automatically selected, create a new directory “PhyloSignal” and paste within the file SARSCoV2_aln_cut.fasta. 
+To perform a likelihood mapping analysis (ignoring tree search) with 2000 quartets for the alignment LAC_SARSCoV2_aln_cut.fasta with a model being automatically selected, create a new directory “PhyloSignal” and paste within the file LAC_SARSCoV2_aln_cut.fasta. 
 
 -Open a terminal in that directory and type:
 ```
-iqtree2 -s SARSCoV2_aln_cut.fasta -lmap 2000 -n 0 -m MF
+iqtree2 -s LAC_SARSCoV2_aln_cut.fasta -lmap 2000 -n 0 -m MF
 ```
 
 **Usage:**
@@ -284,7 +296,9 @@ iqtree2 -s SARSCoV2_aln_cut.fasta -lmap 2000 -n 0 -m MF
 **-n 0:** Skip subsequent tree search, useful when you only want to assess the phylogenetic information of the alignment.
 >[Note that if you already have selected an evolutionary model from a previous analysis with this dataset, you can specify it in the command option -m, for example: -m TIM2+F+I+G4]
 
-You can now view the likelihood mapping plot file **SARSCoV2_aln_cut.lmap.eps** (or .svg file), which shows phylogenetic information of the alignment SARSCoV2_aln_cut.fasta. 
+You can now view the likelihood mapping plot file **LAC_SARSCoV2_aln_cut.lmap.eps** (or .svg file)*, which shows phylogenetic information of the alignment LAC_SARSCoV2_aln_cut.fasta. 
+
+*these files can be opened using the program **evince**
 
 The figure will look like this:
 
