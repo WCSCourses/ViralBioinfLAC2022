@@ -101,7 +101,7 @@ If you check your directory again, you should now see a file called **dengue-aln
 
 This is an example of a **SAM** file, which is the common output file type
 for deep sequencing reads. SAM files tend to take up a lot of space on
-your computer however so let's go ahead and convert this file to a **BAM**
+your computer so let's go ahead and convert this file to a **BAM**
 file, which is the compressed version. We will be using ``samtools view`` to do
 this:
 
