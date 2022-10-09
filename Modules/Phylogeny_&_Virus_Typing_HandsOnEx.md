@@ -172,7 +172,7 @@ Specific objectives of this practice:
 - To build a Maximum Likelihood tree to assign the Pango lineage to a group of SARS-CoV-2 sequences obtained in Latin America.
 - To build a Maximum Likelihood tree to genotype three DENV-4 isolates that circulated in Brazil in 2012-2013 and determine if they belong to a unique transmission chain. 
 
-Datasets to use: **LAC_SARSCoV2_aln_cut.fasta (or LAC_DENV_aln_cut.fasta)**, from the practical activity 1.
+Datasets to use: **LAC_SARSCoV2_aln_cut.fasta (or LAC_DENV_aln_cut.fasta)**, from the Activity 1.
 
 **Introduction to the IQ-TREE program:**
 
