@@ -90,7 +90,7 @@ File -> Open File: LAC_SARSCoV2.fasta
 
 4. Perform an alignment with the default program (Muscle): 
 ```
-Align -> Realign everything -> OK.
+Align -> Realign everything -> OK
 ```
 
 *[The program will start, and different steps will be shown. Once the alignment is completed, the output file will be automatically shown.]*
@@ -98,7 +98,7 @@ Align -> Realign everything -> OK.
 5. Check the alignment and realign regions if needed: 
 
 ```
-Select the region to realign -> Align -> Realign selected block.
+Select the region to realign -> Align -> Realign selected block
 ```
 
 6. Save this alignment in the same directory: 
@@ -127,7 +127,7 @@ File -> Open File: LAC_SARSCoV2_aln.fasta
 
 3. Check the alignment and realign regions if needed: 
 ```
-Select the region to realign -> Align -> Realign selected block.
+Select the region to realign -> Align -> Realign selected block
 ```
 
 4. Select the region to be deleted:
@@ -153,7 +153,7 @@ b) Repeat the procedure for the right end, select the first nucleotide of the re
 
 c) Repeat the procedure for internal regions if needed:
 ```
-- Select the region -> Edit -> Delete selected.
+- Select the region -> Edit -> Delete selected
 ```
 
 5. Save the edited alignment in the same directory:
@@ -163,6 +163,7 @@ c) Repeat the procedure for internal regions if needed:
 
 This file will be used to estimate the substitution model and infer the phylogenetic tree.
 
+-----------------------
 
 ## Activity 2: Phylogenetic analysis
 
@@ -241,7 +242,7 @@ File -> Open -> select the file LAC_SARSCoV2_aln_cut.treefile
 
 4. In this exercise, it is recommended to root the tree in the branch that connects lineage A with lineage B: 
 ```
-Select the branch -> Reroot.
+Select the branch -> Reroot
 ```
 
 5. It is recommended to order the tree to improve its visualization:
@@ -251,16 +252,16 @@ Tree -> Increasing Node Order
 
 6. Display support values: 
 ```
-Branch labels -> Display "SH/UFB".
+Branch labels -> Display "SH/UFB"
 ```
 
 7. Annotate and color the tree according to the locations:
 ```
--Menu File -> Import annotations -> load the file “LAC_SARSCoV2_location.txt” from its folder.
--Menu Tree -> Annotate Nodes from tips -> Annotation: Region.
+-Menu File -> Import annotations -> load the file “LAC_SARSCoV2_location.txt” from its folder
+-Menu Tree -> Annotate Nodes from tips -> Annotation: Region
 -Appearance -> Colour by -> Region
 -Tip Labels -> Colour by: Region
--Legend -> Click to show the legend -> Attribute: Region.
+-Legend -> Click to show the legend -> Attribute: Region
 ```
 
 In addition, you can modify the size of the fonts (in Tip Labels, Legend, etc).
