@@ -123,7 +123,7 @@ To do this, we need the BAM files, obviously; we also need files containing the 
 
     cd /home/manager/course_data/Coverage_Plots_Stats
     
-When you execute `ls -lh` , you will notice we now have the following files: `reference_genome.fasta`,  `reference_genome.fasta.fai` and `reference_genome.gff3`. We are ready to run the IGV genome browser software by executing the command ``igv``.
+When you execute `ls -lh` , you will notice we have the following files: `reference_genome.fasta`,  `reference_genome.fasta.fai` and `reference_genome.gff3`. We are ready to run the IGV genome browser software by executing the command ``igv``.
 
 Click on *Genomes* -> *Load genome from file* and select `reference_genome.fasta`.
 Click on *File* -> *Load from file* and select `reference_genome.gff3`.
