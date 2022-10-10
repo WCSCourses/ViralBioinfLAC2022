@@ -1,6 +1,9 @@
 # Consensus and variant calling
 ## Overview
 
+<img width="576" alt="Screen Shot 2022-10-10 at 12 15 41" src="https://user-images.githubusercontent.com/65819144/194900454-d41da0cb-28f9-4035-92d2-a07d4bc220b6.png">
+
+
 <img width="576" alt="Screen Shot 2022-10-10 at 12 15 41" src="https://user-images.githubusercontent.com/65819144/194899559-22501201-ef5b-414a-86db-741492d2cb49.png">
 
 ## Creating a consensus with BCFtools
