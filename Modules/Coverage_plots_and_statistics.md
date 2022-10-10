@@ -121,7 +121,7 @@ If you have any spare time then optionally, let's visually inspect the alignment
 
 To do this, we need the BAM files, obviously; we also need files containing the reference genome sequence. Lets download those now. First, make sure that we are in the correct directory:
 
-    cd /home/manager/ViralBioinfAsia2022/course_data/Coverage_Plots_Stats
+    cd /home/manager/course_data/Coverage_Plots_Stats
 
 Then use *wget* to download the reference-genome files:
 
