@@ -119,16 +119,11 @@ For our datasets, try to answer these questions:
 ### Visualising the data using IGV
 If you have any spare time then optionally, let's visually inspect the alignment data using the Integrative Genome Viewer (IGV). This will provide us with an overview of the data. (Alternatively, you can use Tablet instead of IGV, if you prefer).
 
-To do this, we need the BAM files, obviously; we also need files containing the reference genome sequence. Lets download those now. First, make sure that we are in the correct directory:
+To do this, we need the BAM files, obviously; we also need files containing the reference genome sequence. First, make sure that we are in the correct directory:
 
     cd /home/manager/course_data/Coverage_Plots_Stats
-
-Then use *wget* to download the reference-genome files:
-
-    wget https://github.com/WCSCourses/ViralBioinfAsia2022/blob/main/course_data/Coverage_Plots_Stats/reference_genome.fasta https://github.com/WCSCourses/ViralBioinfAsia2022/blob/main/course_data/Coverage_Plots_Stats/reference_genome.fasta.fai https://github.com/WCSCourses/ViralBioinfAsia2022/raw/main/course_data/Coverage_Plots_Stats/reference_genome.gff3
     
-
-Now, when you execute `ls -lh` , you will notice we now have the following files: `reference_genome.fasta`,  `reference_genome.fasta.fai` and `reference_genome.gff3`. We are ready to run the IGV genome browser software by executing the command ``igv``.
+When you execute `ls -lh` , you will notice we now have the following files: `reference_genome.fasta`,  `reference_genome.fasta.fai` and `reference_genome.gff3`. We are ready to run the IGV genome browser software by executing the command ``igv``.
 
 Click on *Genomes* -> *Load genome from file* and select `reference_genome.fasta`.
 Click on *File* -> *Load from file* and select `reference_genome.gff3`.
