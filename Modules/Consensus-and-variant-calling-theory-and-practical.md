@@ -4,7 +4,6 @@
 <img width="557" alt="Screen Shot 2022-10-10 at 12 21 43" src="https://user-images.githubusercontent.com/65819144/194901217-4561b7bc-aa16-4ac7-bf62-dcf8c30c96cc.png">
 
 
-
 ## Creating a consensus with BCFtools
 
 Let's start by preparing the folder and files we will be working with:  
@@ -198,6 +197,6 @@ From here you should be able to follow the steps above to answer the questions b
 
 **Question6: How many mapped reads do you have in the 1% subsampled 'chikv-cons-subsample.sorted.bam' file?**
 >Answer: 47486
->
+
 **Question7: What is the allele frequency at position 757 (chikv-cons.vcf)?**
 >Answer: A-->G    AF=0.051948
