@@ -21,7 +21,7 @@ The Viral Genomics and Bioinformatics course will teach participants how to anal
 - [Richard Orton](https://www.gla.ac.uk/researchinstitutes/iii/staff/richardorton/), MRC-University of Glasgow Centre for Virus Research, UK
 - [Srikeerthana Kuchi](), MRC-University of Glasgow Centre for Virus Research, UK
 - [Maria Dolores Blanco Fernandez](Link), Faculty of Pharmacy and Biochemistry, University of Buenos Aires, Argentina
-- [András Carlos Alberto Culasso ](Link), CONICET - Faculty of Pharmacy and Biochemistry, University of Buenos Aires, Argentina     
+- [Andrés Carlos Alberto Culasso ](Link), CONICET - Faculty of Pharmacy and Biochemistry, University of Buenos Aires, Argentina     
 - [Laise de Moraes](https://www.researchgate.net/profile/Laise-De-Moraes), FIOCRUZ-BA, Brazil
 - [Tomás Poklépovich](https://www.researchgate.net/profile/Tomas-Poklepovich), Centro Nacional de Genómica y Bioinfomática, ANLIS Malbrán, Argentina
 - [María Sol Haim](Link), Centro Nacional de Genómica y Bioinfomática, ANLIS Malbrán, Argentina
