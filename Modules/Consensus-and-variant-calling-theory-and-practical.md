@@ -74,7 +74,7 @@ We have created (and removed) several files here. The one that contains the cons
 
 So what effectively is the difference between the **dengue-consensus-bcftools.fa** and **dengue-consensus-vcf2fq.fq** files we´ve generated? If we were to align these back to the reference genome dengue-genome.fa we can see the ambiquity present in the **dengue-consensus-vcf2fq.fq** whereas the **dengue-consensus-bcftools.fa** merely shows a complete consensus change at this position.
 
-![Consensus-image2.png](https://github.com/WCSCourses/ViralBioinfAsia2022/blob/main/Modules/images/Consensus-image2.png)
+<img width="1034" alt="Screen Shot 2022-10-10 at 11 54 13" src="https://user-images.githubusercontent.com/65819144/194898066-210ac929-2905-4356-84d4-709cc355f11f.png">
 
 ## Variant calling
 
