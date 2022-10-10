@@ -1,7 +1,7 @@
 # Consensus and variant calling
 ## Overview
 
-![Consensus-image1.png](https://github.com/WCSCourses/ViralBioinfAsia2022/blob/main/Modules/images/Consensus-image1.png)
+<img width="576" alt="Screen Shot 2022-10-10 at 12 15 41" src="https://user-images.githubusercontent.com/65819144/194899559-22501201-ef5b-414a-86db-741492d2cb49.png">
 
 ## Creating a consensus with BCFtools
 
