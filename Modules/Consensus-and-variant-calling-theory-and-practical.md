@@ -26,6 +26,8 @@ Let's start by preparing the folder and files we will be working with:
 
 >**Note**: To make this run much faster on your laptops, we are going to be subsampling the .bam file you created in the 'Reference_alignment' module. When generating a consensus sequence on real data, we would strongly recommend using the full .bam file as the result may be more accurate. 
 
+>:gift: If you couldn't finish Module 6, click [here](Modules/dengue-subsample.sorted.bam) to download the input .bam file
+
 Ok, all the prep work is done!  
 
 Now that we have our alignment file, we can generate a consensus sequence. We will explore two separate ways to generate this consensus:
