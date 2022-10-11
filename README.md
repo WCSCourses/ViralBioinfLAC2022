@@ -71,6 +71,8 @@ Pre-recorded-Video - Marta Giovanetti
 **Module 8 - Consensus & variant calling**  
 [Online Manual - Consensus & variant calling](Modules/Consensus-and-variant-calling-theory-and-practical.md)
 
+[Input .bam file](Modules/dengue-subsample.sorted.bam)
+
 **Module 9 - De Novo assembly**  
 [PDF Manual - De Novo assembly](Modules/DeNovo-Sreenu-Asia-2022.pdf)      
 
