@@ -57,8 +57,11 @@ Pre-recorded-Video - Marta Giovanetti
 
 **Module 5 - Introduction to BASH scripting**  
 [Online Manual - BASH scripting](Modules/BASHscripting.md)
+
 [PDF Slides - Bash Scripting](Modules/BASH_Scripting_Introduction.pdf)
-<!-- [PDF Answers - Bash Scripting](Modules/Lectures_and_Answers/bash_scripting/code_description_BASH-Practical.pdf).  -->
+
+[PDF Answers - Bash Scripting](Modules/ViralGenomics2022_resultsBashScripting.pdf)
+
 <!-- [Answer Scripts Folder - Bash Scripting](Modules/Lectures_and_Answers/bash_scripting/)  -->
 
 
