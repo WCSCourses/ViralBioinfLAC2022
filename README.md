@@ -86,7 +86,6 @@ Pre-recorded-Video - Marta Giovanetti
 
 
 **Module 11 - Introduction to phylogenetic methods**  
-
 [Online Manual - Phylogenetics and Virus Typing](Modules/Phylogeny_&_Virus_Typing_HandsOnEx.md)   
 
 [PDF Phylogenetics_Hands-on exercises](Modules/Phylogenetics_Hands-on_exercises.pdf) 
