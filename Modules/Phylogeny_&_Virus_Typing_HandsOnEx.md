@@ -194,13 +194,13 @@ You can find many basic and advanced tutorials at http://www.iqtree.org/doc/
 
 2.	Type: 
 ```
->iqtree2 -h 
+iqtree2 -h 
 ```
 (this command allows you to see all available options, check those that you will use in the next step).
 
 3.	Type: 
 ```
->iqtree2 -s LAC_SARSCoV2_aln_cut.fasta -m MFP -B 10000 -alrt 1000
+iqtree2 -s LAC_SARSCoV2_aln_cut.fasta -m MFP -B 10000 -alrt 1000
 ```
 
 >**Usage:**
