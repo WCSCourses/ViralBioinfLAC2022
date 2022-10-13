@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1536656051182.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "8125874",
+    "id" : "60DB8E7A",
+    "lastKnownWriteTime" : 1536658979,
+    "last_content_update" : 1536658979488,
+    "path" : "~/Documents/R/TLam_ggtree/ggtree_WorkingPackage_VEME2018/ggtree_tutorial_R_codes.r",
+    "project_path" : "ggtree_tutorial_R_codes.r",
+    "properties" : {
+        "cursorPosition" : "34,0",
+        "scrollLine" : "24"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,137 @@
+
+#check LIB devtools
+if (!require("devtools")){
+  install.packages("devtools", dependencies = TRUE)
+  library("devtools")
+}else{
+  library("devtools")
+}
+
+#check LIB ggplot2
+if (!require("ggplot2")){
+  install.packages("ggplot2")
+  library(ggplot2)
+}else{
+  library(ggplot2)
+}
+#check LIB ggtree
+if (!require("ggtree")){
+  source("https://bioconductor.org/biocLite.R")
+  biocLite("Biostrings")
+  biocLite("ggtree")
+  library(ggtree)
+}else{
+  library(ggtree)
+}
+#check LIB treeio
+if (!require("treeio")){
+  devtools::install_github("guangchuangyu/treeio")
+  library(treeio)
+}else{
+  library(treeio)
+}
+
+#### Section 1: BEAST Tree Data ####
+
+#path to file TREE
+file_tree <- "Figure3withSEAsia.tre"
+
+#path of directory Hyphy with your files NEXUS, NWK and FASTA
+file_hyphy_file_nex <- "Hyphy/ancseq.nex"
+file_hyphy_file_nwk <- "Hyphy/labelled_tree.nwk"
+file_hyphy_file_aln_fasta <- "Hyphy/ZiBRA_aln.fas"
+
+#path of file metadata 
+file_metadata <- "ZiBra_metadata.txt" 
+
+#path of directory to save your results -- need full path with "/" at the end
+dir_result <- "" 
+
+
+## 1.1 Read BEAST tree
+bt <- read.beast(file_tree)
+
+## 1.2 Show the ‘content’ of beast tree that you have loaded in as a phylogenetic object
+bt
+
+## 1.3 Show plain tree
+ggtree(bt)
+
+## 1.4 Show timescale
+ggtree(bt, mrsd = "2016-10-12") + theme_tree2()
+
+## 1.5 Change the x-axis year scale
+ggtree(bt, mrsd = "2016-10-12") + theme_tree2() + scale_x_continuous(breaks = seq(2000, 2017))
+
+## 1.6 Show tip labels
+ggtree(bt, mrsd = "2016-10-12") + theme_tree2() + scale_x_continuous(breaks = seq(2000, 2017)) + geom_tiplab(size=2) 
+
+## 1.7 Left shift a little
+ggtree(bt, mrsd = "2016-10-12") + theme_tree2() + scale_x_continuous(breaks = seq(2000, 2017), limits=c(2000, 2035)) + geom_tiplab(size=2) 
+
+## 1.8 Print the tree into a pdf
+p <- ggtree(bt, mrsd = "2016-10-12") + theme_tree2() + scale_x_continuous(breaks = seq(2000, 2017), limits=c(2000, 2035)) + geom_tiplab(size=2)
+ggsave(p, file=paste0(dir_result, "tree.pdf"), width=15, height=35)
+
+## 1.9 Add the range bar (with the 95% HPD) to the node
+ggtree(bt, mrsd = "2016-10-12") + theme_tree2() + scale_x_continuous(breaks = seq(2000, 2017), limits=c(2000, 2017)) + geom_range(range='height_0.95_HPD', color='purple', alpha=.3, size=1.2) 
+
+## 1.10 Show posterior clade probability as text (show only > 0.9)
+ggtree(bt, mrsd = "2016-10-12") + theme_tree2() + scale_x_continuous(breaks = seq(2000, 2017), limits=c(2000, 2017)) + geom_range(range='height_0.95_HPD', color='purple', alpha=.3, size=1.2) + geom_text2(aes(label=round(as.numeric(as.character(posterior)), 2), subset=as.numeric(as.character(posterior)) > 0.9), size=2)
+
+## 1.11 Show posterior clade probability as circle (show only > 0.9)
+ggtree(bt, mrsd = "2016-10-12") + scale_x_continuous(breaks = seq(2000, 2017), limits=c(2000, 2017)) + geom_range(range='height_0.95_HPD', color='purple', alpha=.3, size=1.2) + geom_point2(aes(label=round(as.numeric(as.character(posterior)), 2), subset=as.numeric(as.character(posterior)) > 0.9, size=as.numeric(as.character(posterior))), alpha=.5) + scale_size(range=c(0, 2.5)) + theme_tree2(legend.position='right')
+
+
+
+#### Section 2: HYPHY Tree Data ####
+
+## 2.1 Read Hyphy tree + sequence data
+hy <- read.hyphy(file_hyphy_file_nwk, file_hyphy_file_nex, file_hyphy_file_aln_fasta)
+hy
+
+## 2.2 Show amino acid substitutions on branch
+ggtree(hy) + geom_text(aes(x=branch, label=AA_subs), vjust=-.2, size = 2)
+
+
+
+
+
+#### Section 3: Merging Trees ####
+
+## 3.1 Merge two trees – BEAST Tree and HYPHY Tree
+mt <- merge_tree(bt, hy)
+mt
+
+## 3.2 Merge two trees – BEAST Tree and HYPHY Tree
+ggtree(mt, mrsd = "2016-10-12") + scale_x_continuous(breaks = seq(2000, 2017), limits=c(2000, 2017)) + geom_range(range='length_0.95_HPD', color='purple', alpha=.3, size=1.2) + geom_point2(aes(label=round(as.numeric(as.character(posterior)), 2), subset=as.numeric(as.character(posterior)) > 0.9, size=as.numeric(as.character(posterior))), alpha=.5) + scale_size(range=c(0, 2.5)) + theme_tree2(legend.position='right') + geom_text(aes(x=branch, label=AA_subs), vjust=-.2, size = 2)
+
+## 3.3 Including most annotations e.g. taxon labels, substitutions, to output a large tree pdf
+p <- ggtree(mt, mrsd = "2016-10-12") + scale_x_continuous(breaks = seq(2000, 2017), limits=c(2000, 2035)) + geom_tiplab(size=2) + geom_range(range='length_0.95_HPD', color='purple', alpha=.3, size=1.2) + geom_point2(aes(label=round(as.numeric(as.character(posterior)), 2), subset=as.numeric(as.character(posterior)) > 0.9, size=as.numeric(as.character(posterior))), alpha=.5) + scale_size(range=c(0, 2.5)) + theme_tree2(legend.position='right') + geom_text(aes(x=branch, label=AA_subs), vjust=-.2, size = 2)
+ggsave(p, file=paste0(dir_result, "tree2.pdf"), width=15, height=35)
+
+## 3.4 Show tip symbols and colour based on the geographic states
+p <- ggtree(mt, mrsd = "2016-10-12") + geom_tippoint(aes(color=states)) + theme_tree2(legend.position='right')
+p
+
+## 3.5 Highlight clades
+# Display the node labels first:
+ggtree(mt, mrsd = "2016-10-12") + geom_tippoint(aes(color=states)) + geom_text2(aes(subset=!isTip, label=node), hjust=-.3) + theme_tree2(legend.position='right')
+# Highlight the clades under node #276 and #426:
+ggtree(mt, mrsd = "2016-10-12") + geom_tippoint(aes(color=states)) + theme_tree2(legend.position='right') + geom_hilight(node=276, fill="darkgreen", alpha=.3) + geom_hilight(node=426, fill="darkred", alpha=.3)
+
+## 3.6 Show the heatmap-like box based on the external meta-data file
+metad <- read.table(file_metadata, sep="\t", stringsAsFactor=F)
+p <- ggtree(mt, mrsd = "2016-10-12") + geom_tippoint(aes(color=states)) + theme_tree2(legend.position='right') + geom_hilight(node=276, fill="darkgreen", alpha=.3) + geom_hilight(node=426, fill="darkred", alpha=.3)
+(p + scale_y_continuous(expand=c(0, 0.3))) %>% gheatmap(metad, offset=0, width=0.1, colnames=FALSE) %>% scale_x_ggtree()
+
+## 3.7 Show the tree in a ‘fan’ layout
+p2 <- ggtree(mt) + geom_tippoint(aes(color=states)) + theme_tree(legend.position='right') + geom_hilight(node=276, fill="darkgreen", alpha=.3) + geom_hilight(node=426, fill="darkred", alpha=.3)
+pp2 <- p2 %>% gheatmap(metad, offset=0, width=0.1, colnames=FALSE)
+open_tree(pp2, 180)
+
+## 3.8 Show multiple sequence alignment next to the tree
+p3 <- ggtree(mt) + geom_tippoint(aes(color=states)) + geom_hilight(node=276, fill="darkgreen", alpha=.3) + geom_hilight(node=426, fill="darkred", alpha=.3)
+msaplot(p3, file_hyphy_file_aln_fasta)
+
+## End of ggtree Tutorial VEME 2018 ##
