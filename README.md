@@ -88,7 +88,9 @@ Pre-recorded-Video - Marta Giovanetti
 **Module 11 - Introduction to phylogenetic methods**  
 
 [Online Manual - Phylogenetics and Virus Typing](Modules/Phylogeny_&_Virus_Typing_HandsOnEx.md)   
-[PDF Phylogenetics_Hands-on exercises](Modules/Phylogenetics_Hands-on_exercises.pdf)    
+[PDF Phylogenetics_Hands-on exercises](Modules/Phylogenetics_Hands-on_exercises.pdf) 
+[Slides Intro_to_MSA](Modules/Slides_Lecture_Introduction_to_MSA.pdf) 
+[Slides Phylogenetics](Modules/Slides_Lecture_Phylogenetics.pdf) 
 
 **Module 12 - SARS-CoV-2 workflows**  
 
