@@ -108,10 +108,10 @@ Pre-recorded-Video - Marta Giovanetti
 
 
 **Appendix**      
-<!-- [PDF - ALT Learning Outcomes Session 2 Slides](Modules/COG-TrainALTslides-Session2.pdf)    + -->
-<!-- [PDF - Answers ALT Learning Outcomes Exercise](https://github.com/WCSCourses/ViralBioinfLAC2022/blob/6eaa7ff9118205db4e65031a43e67c2dae603375/Modules/LAC_COG-TrainALTslides_Session2.png)       + -->
+[PDF - ALT Learning Outcomes Session 2 Slides](Modules/COG-TrainALTslides-Session2.pdf)    
+[PDF - Answers ALT Learning Outcomes Exercise](https://github.com/WCSCourses/ViralBioinfLAC2022/blob/6eaa7ff9118205db4e65031a43e67c2dae603375/Modules/LAC_COG-TrainALTslides_Session2.png)      
       
-
+[Software List used in Virtual Machine](course_data/software_list.md)       
 
 
 Any reuse of the course materials, data or code is encouraged with due acknowledgement.
