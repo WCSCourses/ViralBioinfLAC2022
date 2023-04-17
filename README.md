@@ -43,6 +43,10 @@ The Viral Genomics and Bioinformatics course will teach participants how to anal
 [View ALT Handout here](Modules/Advanced%20Courses%20ALT%20Sessions%20handouts%20edited%20LAC.pdf)
 
 ## Course manual
+
+**Post course Lecture Recordings**       
+[Course Lectures Playlist](https://www.youtube.com/playlist?list=PLfovZnX0TvKuV5TEjeHTOeS5B2QMVf-qT)        
+
 **Module 1 - Introduction to Linux + Module 2 - Linux text processing**   
 [PDF Manual - Introduction to Linux + Text processing](Modules/Intro_to_linux_text_processing.pdf)     
 [PDF Lectures Slides - Introduction to Linux + Text processing](Modules/Intro_to_linux_LAC2022_slides.pdf)        
